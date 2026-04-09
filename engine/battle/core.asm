@@ -6409,6 +6409,10 @@ GiveWildMonRandomEggMove:
 	ld l, e
 	call GetMoveIDFromIndex
 	ld [wEnemyMonMoves], a
+	ld l, a
+	ld a, MOVE_PP
+	call GetMoveAttribute
+	ld [wEnemyMonPP], a
 	ret
 
 CheckSleepingTreeMon:

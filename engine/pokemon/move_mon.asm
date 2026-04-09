@@ -1484,6 +1484,16 @@ GiveGiftMonRandomEggMove:
 	call GetMoveIDFromIndex
 	pop hl
 	ld [hl], a
+	push hl
+	ld l, a
+	ld a, MOVE_PP
+	call GetMoveAttribute
+	pop hl
+	push hl
+	pop de
+	ld hl, MON_PP - MON_MOVES
+	add hl, de
+	ld [hl], a
 	ret
 
 .pop_hl
