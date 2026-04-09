@@ -114,17 +114,17 @@ TreeMonSet_Forest:
 	dbbw 50, 10, HOOTHOOT
 	dbbw 15, 10, PINECO
 	dbbw 15, 10, PINECO
-	dbbw 10, 10, NOCTOWL
-	dbbw  5, 10, BUTTERFREE
-	dbbw  5, 10, BEEDRILL
+	dbbw 10, 10, HOOTHOOT
+	dbbw  5, 10, CATERPIE
+	dbbw  5, 10, WEEDLE
 	db -1
 ; rare
 	dbbw 50, 10, HOOTHOOT
 	dbbw 15, 10, CATERPIE
 	dbbw 15, 10, WEEDLE
 	dbbw 10, 10, HOOTHOOT
-	dbbw  5, 10, METAPOD
-	dbbw  5, 10, KAKUNA
+	dbbw  5, 10, CATERPIE
+	dbbw  5, 10, WEEDLE
 	db -1
 
 TreeMonSet_Rock:

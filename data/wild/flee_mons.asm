@@ -9,9 +9,9 @@ SometimesFleeMons:
 	dw EEVEE
 	dw PORYGON
 	dw DRATINI
-	dw DRAGONAIR
-	dw TOGETIC
-	dw UMBREON
+	dw DRATINI
+	dw TOGEPI
+	dw EEVEE
 	dw UNOWN
 	dw SNUBBULL
 	dw HERACROSS
@@ -22,7 +22,7 @@ OftenFleeMons:
 	dw ARTICUNO
 	dw ZAPDOS
 	dw MOLTRES
-	dw QUAGSIRE
+	dw WOOPER
 	dw DELIBIRD
 	dw PHANPY
 	dw TEDDIURSA

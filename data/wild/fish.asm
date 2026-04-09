@@ -37,7 +37,7 @@ FishGroups:
 	dbbw  40 percent,     40, KRABBY
 	dbbw  70 percent,     1, TIME_GROUP
 	dbbw  90 percent + 1, 40, KRABBY
-	dbbw 100 percent,     40, KINGLER
+	dbbw 100 percent,     40, KRABBY
 
 .Ocean_Old:
 	dbbw  70 percent + 1, 10, MAGIKARP
@@ -51,8 +51,8 @@ FishGroups:
 .Ocean_Super:
 	dbbw  40 percent,     40, CHINCHOU
 	dbbw  70 percent,     3, TIME_GROUP
-	dbbw  90 percent + 1, 40, TENTACRUEL
-	dbbw 100 percent,     40, LANTURN
+	dbbw  90 percent + 1, 40, TENTACOOL
+	dbbw 100 percent,     40, CHINCHOU
 
 .Lake_Old:
 	dbbw  70 percent + 1, 10, MAGIKARP
@@ -67,7 +67,7 @@ FishGroups:
 	dbbw  40 percent,     40, GOLDEEN
 	dbbw  70 percent,     5, TIME_GROUP
 	dbbw  90 percent + 1, 40, MAGIKARP
-	dbbw 100 percent,     40, SEAKING
+	dbbw 100 percent,     40, GOLDEEN
 
 .Pond_Old:
 	dbbw  70 percent + 1, 10, MAGIKARP
@@ -97,7 +97,7 @@ FishGroups:
 	dbbw  40 percent,     40, MAGIKARP
 	dbbw  70 percent,     9, TIME_GROUP
 	dbbw  90 percent + 1, 40, MAGIKARP
-	dbbw 100 percent,     40, DRAGONAIR
+	dbbw 100 percent,     40, DRATINI
 
 .Qwilfish_Swarm_Old:
 	dbbw  70 percent + 1, 5, MAGIKARP
@@ -157,7 +157,7 @@ FishGroups:
 	dbbw  40 percent,     10, MAGIKARP
 	dbbw  70 percent,     17, TIME_GROUP
 	dbbw  90 percent + 1, 10, MAGIKARP
-	dbbw 100 percent,     10, DRAGONAIR
+	dbbw 100 percent,     10, DRATINI
 
 .WhirlIslands_Old:
 	dbbw  70 percent + 1, 10, MAGIKARP
@@ -171,8 +171,8 @@ FishGroups:
 .WhirlIslands_Super:
 	dbbw  40 percent,     40, KRABBY
 	dbbw  70 percent,     19, TIME_GROUP
-	dbbw  90 percent + 1, 40, KINGLER
-	dbbw 100 percent,     40, SEADRA
+	dbbw  90 percent + 1, 40, KRABBY
+	dbbw 100 percent,     40, HORSEA
 
 .Qwilfish_NoSwarm_Old:
 .Qwilfish_Old:
@@ -223,8 +223,8 @@ TimeFishGroups:
 	dbwbw 40, QWILFISH,   40, QWILFISH   ; 11
 	dbwbw 20, REMORAID,   20, REMORAID   ; 12
 	dbwbw 40, REMORAID,   40, REMORAID   ; 13
-	dbwbw 20, GYARADOS,   20, GYARADOS   ; 14
-	dbwbw 40, GYARADOS,   40, GYARADOS   ; 15
+	dbwbw 20, MAGIKARP,   20, MAGIKARP   ; 14
+	dbwbw 40, MAGIKARP,   40, MAGIKARP   ; 15
 	dbwbw 10, DRATINI,    10, DRATINI    ; 16
 	dbwbw 10, DRATINI,    10, DRATINI    ; 17
 	dbwbw 20, HORSEA,     20, HORSEA     ; 18
