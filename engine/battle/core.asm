@@ -6273,6 +6273,7 @@ LoadEnemyMon:
 	ld [wSkipMovesBeforeLevelUp], a
 ; Fill moves based on level
 	predef FillMoves
+	call GiveWildMonRandomEggMove
 
 .PP:
 ; Trainer battle?
@@ -6340,6 +6341,75 @@ LoadEnemyMon:
 	ld bc, NUM_BATTLE_STATS * 2
 	rst CopyBytes
 	jmp ApplyStatusEffectOnEnemyStats
+
+GiveWildMonRandomEggMove:
+; Replace move slot 1 with a random egg move for this wild species.
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, EggMovePointers
+	ld a, BANK(EggMovePointers)
+	call LoadDoubleIndirectPointer
+	ret z
+	ld d, a
+
+	push hl
+	ld c, 0
+.count_loop
+	ld a, d
+	call GetFarByte
+	cp $ff
+	jr nz, .count_move
+	inc hl
+	ld a, d
+	call GetFarByte
+	dec hl
+	cp $ff
+	jr z, .have_count
+
+.count_move
+	inc c
+	inc hl
+	inc hl
+	jr .count_loop
+
+.have_count
+	ld a, c
+	and a
+	pop hl
+	ret z
+
+	call BattleRandom
+.mod_loop
+	cp c
+	jr c, .have_index
+	sub c
+	jr .mod_loop
+
+.have_index
+	ld b, a
+.advance_to_move
+	ld a, b
+	and a
+	jr z, .get_move
+	inc hl
+	inc hl
+	dec b
+	jr .advance_to_move
+
+.get_move
+	ld a, d
+	call GetFarByte
+	ld e, a
+	inc hl
+	ld a, d
+	call GetFarByte
+	ld h, a
+	ld l, e
+	call GetMoveIDFromIndex
+	ld [wEnemyMonMoves], a
+	ret
 
 CheckSleepingTreeMon:
 ; Return carry if species is in the list
