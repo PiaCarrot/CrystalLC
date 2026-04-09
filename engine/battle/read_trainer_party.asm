@@ -89,6 +89,7 @@ ReadTrainerPartyPieces:
 	cp $ff
 	ret z
 
+	ld a, MAX_LEVEL
 	ld [wCurPartyLevel], a
 	call GetNextTrainerDataByte
 	push hl
@@ -340,6 +341,6 @@ SetTrainerBattleLevel:
 	jr nz, .skip_name
 
 	inc hl
-	ld a, [hl]
+	ld a, MAX_LEVEL
 	ld [wCurPartyLevel], a
 	ret
