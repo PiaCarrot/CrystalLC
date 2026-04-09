@@ -81,7 +81,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw SlowpokeEggMoves
 	dw NoEggMoves1
-	dw NoEggMoves1
+	dw MagnemiteEggMoves
 	dw NoEggMoves1
 	dw FarfetchDEggMoves
 	dw DoduoEggMoves
@@ -100,7 +100,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw KrabbyEggMoves
 	dw NoEggMoves1
-	dw NoEggMoves1
+	dw VoltorbEggMoves
 	dw NoEggMoves1
 	dw ExeggcuteEggMoves
 	dw NoEggMoves1
@@ -120,7 +120,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw GoldeenEggMoves
 	dw NoEggMoves1
-	dw NoEggMoves1
+	dw StaryuEggMoves
 	dw NoEggMoves1
 	dw MrMimeEggMoves
 	dw ScytherEggMoves
@@ -128,8 +128,8 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw PinsirEggMoves
-	dw NoEggMoves1
-	dw NoEggMoves1
+	dw TaurosEggMoves
+	dw MagikarpEggMoves
 	dw NoEggMoves1
 	dw LaprasEggMoves
 	dw NoEggMoves1
@@ -137,7 +137,7 @@ EggMovePointers1:
 	dw NoEggMoves1
 	dw NoEggMoves1
 	dw NoEggMoves1
-	dw NoEggMoves1
+	dw PorygonEggMoves
 	dw OmanyteEggMoves
 	dw NoEggMoves1
 	dw KabutoEggMoves
@@ -160,6 +160,7 @@ BulbasaurEggMoves:
 	dw SAFEGUARD
 	dw RAZOR_WIND
 	dw PETAL_DANCE
+	dw ANCIENTPOWER
 	dw -1 ; end
 
 CharmanderEggMoves:
@@ -169,6 +170,7 @@ CharmanderEggMoves:
 	dw BITE
 	dw OUTRAGE
 	dw BEAT_UP
+	dw CRUNCH
 	dw -1 ; end
 
 SquirtleEggMoves:
@@ -178,6 +180,7 @@ SquirtleEggMoves:
 	dw CONFUSION
 	dw FORESIGHT
 	dw FLAIL
+	dw ZAP_CANNON
 	dw -1 ; end
 
 PidgeyEggMoves:
@@ -227,6 +230,9 @@ NidoranFEggMoves:
 	dw CHARM
 	dw COUNTER
 	dw BEAT_UP
+	dw LOVELY_KISS
+	dw MOONLIGHT
+	dw SWEET_KISS
 	dw -1 ; end
 
 NidoranMEggMoves:
@@ -237,6 +243,9 @@ NidoranMEggMoves:
 	dw AMNESIA
 	dw COUNTER
 	dw BEAT_UP
+	dw LOVELY_KISS
+	dw MORNING_SUN
+	dw SWEET_KISS
 	dw -1 ; end
 
 VulpixEggMoves:
@@ -253,6 +262,7 @@ ZubatEggMoves:
 	dw FAINT_ATTACK
 	dw GUST
 	dw WHIRLWIND
+	dw FLAIL
 	dw -1 ; end
 
 OddishEggMoves:
@@ -260,6 +270,7 @@ OddishEggMoves:
 	dw RAZOR_LEAF
 	dw FLAIL
 	dw SYNTHESIS
+	dw LEECH_SEED
 	dw -1 ; end
 
 ParasEggMoves:
@@ -270,6 +281,7 @@ ParasEggMoves:
 	dw FLAIL
 	dw LIGHT_SCREEN
 	dw PURSUIT
+	dw SYNTHESIS
 	dw -1 ; end
 
 VenonatEggMoves:
@@ -302,6 +314,8 @@ PsyduckEggMoves:
 	dw FUTURE_SIGHT
 	dw PSYCHIC_M
 	dw CROSS_CHOP
+	dw PETAL_DANCE
+	dw TRI_ATTACK
 	dw -1 ; end
 
 MankeyEggMoves:
@@ -327,12 +341,16 @@ PoliwagEggMoves:
 	dw BUBBLEBEAM
 	dw HAZE
 	dw MIND_READER
+	dw GROWTH
+	dw LOVELY_KISS
+	dw SWEET_KISS
 	dw -1 ; end
 
 AbraEggMoves:
 	dw LIGHT_SCREEN
 	dw ENCORE
 	dw BARRIER
+	dw FORESIGHT
 	dw -1 ; end
 
 MachopEggMoves:
@@ -340,6 +358,8 @@ MachopEggMoves:
 	dw MEDITATE
 	dw ROLLING_KICK
 	dw ENCORE
+	dw FALSE_SWIPE
+	dw THRASH
 	dw -1 ; end
 
 BellsproutEggMoves:
@@ -348,6 +368,8 @@ BellsproutEggMoves:
 	dw REFLECT
 	dw SYNTHESIS
 	dw LEECH_LIFE
+	dw LOVELY_KISS
+	dw SWEET_KISS
 	dw -1 ; end
 
 TentacoolEggMoves:
@@ -356,11 +378,13 @@ TentacoolEggMoves:
 	dw RAPID_SPIN
 	dw HAZE
 	dw SAFEGUARD
+	dw CONFUSE_RAY
 	dw -1 ; end
 
 GeodudeEggMoves:
 	dw MEGA_PUNCH
 	dw ROCK_SLIDE
+	dw RAPID_SPIN
 	dw -1 ; end
 
 PonytaEggMoves:
@@ -370,6 +394,7 @@ PonytaEggMoves:
 	dw HYPNOSIS
 	dw CHARM
 	dw QUICK_ATTACK
+	dw LOW_KICK
 	dw -1 ; end
 
 SlowpokeEggMoves:
@@ -378,6 +403,10 @@ SlowpokeEggMoves:
 	dw FUTURE_SIGHT
 	dw STOMP
 	dw -1 ; end
+	
+MagnemiteEggMoves:
+	dw AGILITY
+	dw -1 ; end
 
 FarfetchDEggMoves:
 	dw FORESIGHT
@@ -385,6 +414,7 @@ FarfetchDEggMoves:
 	dw GUST
 	dw QUICK_ATTACK
 	dw FLAIL
+	dw FURY_CUTTER
 	dw -1 ; end
 
 DoduoEggMoves:
@@ -393,6 +423,7 @@ DoduoEggMoves:
 	dw HAZE
 	dw FAINT_ATTACK
 	dw FLAIL
+	dw LOW_KICK
 	dw -1 ; end
 
 SeelEggMoves:
@@ -402,6 +433,7 @@ SeelEggMoves:
 	dw PECK
 	dw SLAM
 	dw ENCORE
+	dw FLAIL
 	dw -1 ; end
 
 GrimerEggMoves:
@@ -427,11 +459,13 @@ GastlyEggMoves:
 OnixEggMoves:
 	dw ROCK_SLIDE
 	dw FLAIL
+	dw SHARPEN
 	dw -1 ; end
 
 DrowzeeEggMoves:
 	dw LIGHT_SCREEN
 	dw BARRIER
+	dw AMNESIA
 	dw -1 ; end
 
 KrabbyEggMoves:
@@ -440,6 +474,11 @@ KrabbyEggMoves:
 	dw AMNESIA
 	dw FLAIL
 	dw SLAM
+	dw METAL_CLAW
+	dw -1 ; end
+
+VoltorbEggMoves:
+	dw AGILITY
 	dw -1 ; end
 
 ExeggcuteEggMoves:
@@ -448,6 +487,7 @@ ExeggcuteEggMoves:
 	dw REFLECT
 	dw MEGA_DRAIN
 	dw ANCIENTPOWER
+	dw SWEET_SCENT
 	dw -1 ; end
 
 CuboneEggMoves:
@@ -458,12 +498,14 @@ CuboneEggMoves:
 	dw SKULL_BASH
 	dw PERISH_SONG
 	dw SWORDS_DANCE
+	dw FURY_ATTACK
 	dw -1 ; end
 
 LickitungEggMoves:
 	dw BELLY_DRUM
 	dw MAGNITUDE
 	dw BODY_SLAM
+	dw DOUBLESLAP
 	dw -1 ; end
 
 KoffingEggMoves:
@@ -488,6 +530,7 @@ ChanseyEggMoves:
 	dw PRESENT
 	dw METRONOME
 	dw HEAL_BELL
+	dw SWEET_SCENT
 	dw -1 ; end
 
 TangelaEggMoves:
@@ -496,6 +539,7 @@ TangelaEggMoves:
 	dw MEGA_DRAIN
 	dw REFLECT
 	dw AMNESIA
+	dw SYNTHESIS
 	dw -1 ; end
 
 KangaskhanEggMoves:
@@ -504,6 +548,7 @@ KangaskhanEggMoves:
 	dw FOCUS_ENERGY
 	dw SAFEGUARD
 	dw DISABLE
+	dw FAINT_ATTACK
 	dw -1 ; end
 
 HorseaEggMoves:
@@ -512,19 +557,25 @@ HorseaEggMoves:
 	dw OCTAZOOKA
 	dw DISABLE
 	dw SPLASH
-	dw DRAGON_RAGE
+	dw HAZE
 	dw -1 ; end
 
 GoldeenEggMoves:
 	dw PSYBEAM
 	dw HAZE
 	dw HYDRO_PUMP
+	dw SWORDS_DANCE
+	dw -1 ; end
+	
+StaryuEggMoves:
+	dw TWISTER
 	dw -1 ; end
 
 MrMimeEggMoves:
 	dw FUTURE_SIGHT
 	dw HYPNOSIS
 	dw MIMIC
+	dw MIND_READER
 	dw -1 ; end
 
 ScytherEggMoves:
@@ -539,17 +590,34 @@ ScytherEggMoves:
 PinsirEggMoves:
 	dw FURY_ATTACK
 	dw FLAIL
+	dw ROCK_THROW
 	dw -1 ; end
+	
+TaurosEggMoves:
+	dw QUICK_ATTACK
+	dw -1
+	
+MagikarpEggMoves:
+	dw BUBBLE
+	dw REVERSAL
+	dw -1
 
 LaprasEggMoves:
 	dw AURORA_BEAM
 	dw FORESIGHT
+	dw BITE
+	dw FUTURE_SIGHT
 	dw -1 ; end
 
 EeveeEggMoves:
 	dw FLAIL
 	dw CHARM
+	dw GROWTH
 	dw -1 ; end
+	
+PorygonEggMoves:
+	dw BARRIER
+	dw -1
 
 OmanyteEggMoves:
 	dw BUBBLEBEAM
@@ -557,6 +625,7 @@ OmanyteEggMoves:
 	dw SLAM
 	dw SUPERSONIC
 	dw HAZE
+	dw ROCK_THROW
 	dw -1 ; end
 
 KabutoEggMoves:
@@ -565,16 +634,21 @@ KabutoEggMoves:
 	dw RAPID_SPIN
 	dw DIG
 	dw FLAIL
+	dw ROCK_THROW
 	dw -1 ; end
 
 AerodactylEggMoves:
 	dw WHIRLWIND
 	dw PURSUIT
 	dw FORESIGHT
+	dw ROCK_THROW
 	dw -1 ; end
 
 SnorlaxEggMoves:
 	dw LICK
+	dw LOVELY_KISS
+	dw SWEET_KISS
+	dw SPLASH
 	dw -1 ; end
 
 DratiniEggMoves:
@@ -582,6 +656,7 @@ DratiniEggMoves:
 	dw MIST
 	dw HAZE
 	dw SUPERSONIC
+	dw HYDRO_PUMP
 NoEggMoves1:
 	dw -1 ; end
 
