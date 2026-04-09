@@ -1240,13 +1240,16 @@ GivePoke::
 	push af
 	ld a, [wCurItem]
 	and a
-	jr z, .done
+	jr z, .set_egg_move
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Item
 	ld bc, PARTYMON_STRUCT_LENGTH
 	rst AddNTimes
 	ld a, [wCurItem]
 	ld [hl], a
+
+.set_egg_move
+	call GiveGiftPartyMonRandomEggMove
 	jr .done
 
 .failed
@@ -1268,10 +1271,13 @@ GivePoke::
 	push af
 	ld a, [wCurItem]
 	and a
-	jr z, .done
+	jr z, .set_box_egg_move
 	ld a, [wCurItem]
 	ld [wBufferMonItem], a
 	farcall UpdateStorageBoxMonFromTemp
+
+.set_box_egg_move
+	call GiveGiftBoxMonRandomEggMove
 
 .done
 	ld a, [wCurPartySpecies]
@@ -1397,6 +1403,91 @@ GivePoke::
 	pop bc
 	pop de
 	ld b, $2
+	ret
+
+GiveGiftPartyMonRandomEggMove:
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Moves
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst AddNTimes
+	jr GiveGiftMonRandomEggMove
+
+GiveGiftBoxMonRandomEggMove:
+	ld hl, wBufferMonMoves
+
+GiveGiftMonRandomEggMove:
+; Replace move slot 1 with a random egg move for this gift species.
+	push hl
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, EggMovePointers
+	ld a, BANK(EggMovePointers)
+	call LoadDoubleIndirectPointer
+	jr z, .pop_hl
+	ld d, a
+
+	push hl
+	ld c, 0
+.count_loop
+	ld a, d
+	call GetFarByte
+	cp $ff
+	jr nz, .count_move
+	inc hl
+	ld a, d
+	call GetFarByte
+	dec hl
+	cp $ff
+	jr z, .have_count
+
+.count_move
+	inc c
+	inc hl
+	inc hl
+	jr .count_loop
+
+.have_count
+	ld a, c
+	and a
+	pop hl
+	jr z, .pop_hl
+
+	call Random
+.mod_loop
+	cp c
+	jr c, .have_index
+	sub c
+	jr .mod_loop
+
+.have_index
+	ld b, a
+.advance_to_move
+	ld a, b
+	and a
+	jr z, .get_move
+	inc hl
+	inc hl
+	dec b
+	jr .advance_to_move
+
+.get_move
+	ld a, d
+	call GetFarByte
+	ld e, a
+	inc hl
+	ld a, d
+	call GetFarByte
+	ld h, a
+	ld l, e
+	call GetMoveIDFromIndex
+	pop hl
+	ld [hl], a
+	ret
+
+.pop_hl
+	pop hl
 	ret
 
 WasSentToBillsPCText:
