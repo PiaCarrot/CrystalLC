@@ -3388,20 +3388,8 @@ CheckWhetherToAskSwitch:
 	ld a, [wLinkMode]
 	and a
 	jr nz, .return_nc
-	ld a, [wOptions]
-	bit BATTLE_SHIFT, a
-	jr nz, .return_nc
-	ld a, [wCurPartyMon]
-	push af
-	ld a, [wCurBattleMon]
-	ld [wCurPartyMon], a
-	farcall CheckCurPartyMonFainted
-	pop bc
-	ld a, b
-	ld [wCurPartyMon], a
-	jr c, .return_nc
-	scf
-	ret
+	; Crystal Legacy: force SET battle style.
+	jr .return_nc
 
 .return_nc
 	and a
