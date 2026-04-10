@@ -179,7 +179,7 @@ KeyItemNames::
 	li "BLUE CARD"    ; 010D
 	li "CARD KEY"     ; 010E
 	li "MACHINE PART" ; 010F
-	li "EGG TICKET"   ; 0110
+	li "INCUBATOR"    ; 0110
 	li "LOST ITEM"    ; 0111
 	li "BASEMENT KEY" ; 0112
 	li "PASS"         ; 0113

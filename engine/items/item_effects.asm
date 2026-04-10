@@ -207,7 +207,7 @@ ItemEffectsKeyItems:
 	dw BlueCardEffect     ; BLUE_CARD
 	dw CardKeyEffect      ; CARD_KEY
 	dw NoEffect           ; MACHINE_PART
-	dw NoEffect           ; EGG_TICKET
+	dw IncubatorEffect    ; INCUBATOR
 	dw NoEffect           ; LOST_ITEM
 	dw BasementKeyEffect  ; BASEMENT_KEY
 	dw NoEffect           ; PASS
@@ -2581,6 +2581,18 @@ PPRestoredText:
 
 SquirtbottleEffect:
 	farjp _Squirtbottle
+
+IncubatorEffect:
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_INCUBATOR_F, [hl]
+	jr z, .enable
+
+	res STATUSFLAGS2_INCUBATOR_F, [hl]
+	ret
+
+.enable
+	set STATUSFLAGS2_INCUBATOR_F, [hl]
+	ret
 
 CardKeyEffect:
 	farjp _CardKey

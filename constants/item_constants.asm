@@ -185,7 +185,8 @@ DEF FIRST_KEY_ITEM EQU const_value
 	const BLUE_CARD    ; 010D
 	const CARD_KEY     ; 010E
 	const MACHINE_PART ; 010F
-	const EGG_TICKET   ; 0110
+	const INCUBATOR    ; 0110
+DEF EGG_TICKET EQU INCUBATOR
 	const LOST_ITEM    ; 0111
 	const BASEMENT_KEY ; 0112
 	const PASS         ; 0113

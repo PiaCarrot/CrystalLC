@@ -913,6 +913,14 @@ CountStep:
 
 	farcall DoEggStep
 	jr nz, .hatch
+	ld a, [wStatusFlags2]
+	bit STATUSFLAGS2_INCUBATOR_F, a
+	jr z, .skip_egg
+
+	farcall DoEggStep
+	jr nz, .hatch
+	farcall DoEggStep
+	jr nz, .hatch
 
 .skip_egg
 	; Increase the EXP of (both) DayCare Pokemon by 1.

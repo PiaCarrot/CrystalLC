@@ -187,7 +187,7 @@ ItemDescriptionsKeyItems:
 	dw BlueCardDesc     ; 010D
 	dw CardKeyDesc      ; 010E
 	dw MachinePartDesc  ; 010F
-	dw EggTicketDesc    ; 0110
+	dw IncubatorDesc    ; 0110
 	dw LostItemDesc     ; 0111
 	dw BasementKeyDesc  ; 0112
 	dw PassDesc         ; 0113
@@ -827,6 +827,10 @@ ParkBallDesc:
 RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
+
+IncubatorDesc:
+	db   "Toggles 3x faster"
+	next "EGG hatching.@"
 
 QuestionMarkDesc:
 	db   "?@"
