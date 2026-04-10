@@ -107,6 +107,48 @@ CheckPartyMove:
 	scf
 	ret
 
+CheckForHMMoveItem:
+; Check if the HM item for move index hl is in the bag.
+; Return carry if item is not found or hl is not an HM move.
+	cphl16 CUT
+	ld de, HM_CUT
+	jr z, .check_item
+	cphl16 FLY
+	ld de, HM_FLY
+	jr z, .check_item
+	cphl16 SURF
+	ld de, HM_SURF
+	jr z, .check_item
+	cphl16 STRENGTH
+	ld de, HM_STRENGTH
+	jr z, .check_item
+	cphl16 FLASH
+	ld de, HM_FLASH
+	jr z, .check_item
+	cphl16 WHIRLPOOL
+	ld de, HM_WHIRLPOOL
+	jr z, .check_item
+	cphl16 WATERFALL
+	ld de, HM_WATERFALL
+	jr z, .check_item
+	scf
+	ret
+
+.check_item
+	ld h, d
+	ld l, e
+	call GetItemIDFromIndex
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr c, .found
+	scf
+	ret
+
+.found
+	and a
+	ret
+
 FieldMoveFailed:
 	ld hl, .CantUseItemText
 	jmp MenuTextboxBackup
@@ -503,7 +545,7 @@ TrySurfOW::
 	jr c, .quit
 
 	ld hl, SURF
-	call CheckPartyMoveIndex
+	call CheckForHMMoveItem
 	jr c, .quit
 
 	ld hl, wBikeFlags
@@ -700,7 +742,7 @@ Script_UsedWaterfall:
 
 TryWaterfallOW::
 	ld hl, WATERFALL
-	call CheckPartyMoveIndex
+	call CheckForHMMoveItem
 	jr c, .failed
 	ld de, ENGINE_RISINGBADGE
 	call CheckEngineFlag
@@ -1041,7 +1083,7 @@ BouldersMayMoveText:
 
 TryStrengthOW:
 	ld hl, STRENGTH
-	call CheckPartyMoveIndex
+	call CheckForHMMoveItem
 	jr c, .nope
 
 	ld de, ENGINE_PLAINBADGE
@@ -1172,7 +1214,7 @@ DisappearWhirlpool:
 
 TryWhirlpoolOW::
 	ld hl, WHIRLPOOL
-	call CheckPartyMoveIndex
+	call CheckForHMMoveItem
 	jr c, .failed
 	ld de, ENGINE_GLACIERBADGE
 	call CheckEngineFlag
@@ -1729,7 +1771,7 @@ GotOffBikeText:
 
 TryCutOW::
 	ld hl, CUT
-	call CheckPartyMoveIndex
+	call CheckForHMMoveItem
 	jr c, .cant_cut
 
 	ld de, ENGINE_HIVEBADGE
