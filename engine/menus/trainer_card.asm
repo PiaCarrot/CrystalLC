@@ -277,33 +277,18 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	hlcoord 10, 15
 	ld de, .Badges
 	rst PlaceString
-	ld hl, wPokedexCaught
-	ld bc, wEndPokedexCaught - wPokedexCaught
-	call CountSetBits16
-	ld a, c
-	ld c, b
-	ld b, a
-	push bc
-	ld hl, sp + 0
-	ld d, h
-	ld e, l
-	hlcoord 15, 10
-	lb bc, 2, 3
+	hlcoord 13, 10
+	ld de, wLP
+	lb bc, 2, 6
 	call PrintNum
-	pop bc
 	call TrainerCard_Page1_PrintGameTime
 	hlcoord 2, 8
 	ld de, .StatusTilemap
 	call TrainerCardSetup_PlaceTilemapString
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_POKEDEX_F, a
-	ret nz
-	hlcoord 1, 9
-	lb bc, 2, 17
-	jmp ClearBox
+	ret
 
 .Dex_PlayTime:
-	db   "#DEX"
+	db   "LP"
 	next "PLAY TIME@"
 
 .Badges:

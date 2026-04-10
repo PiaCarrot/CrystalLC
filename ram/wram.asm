@@ -2709,6 +2709,7 @@ wStatusFlags2::
 	db
 
 wMoney:: ds 3
+wLP:: ds 3
 wMomsMoney:: ds 3
 
 wMomSavingMoney::
