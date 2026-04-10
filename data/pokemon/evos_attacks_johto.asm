@@ -656,7 +656,6 @@ YanmaEvosAttacks:
 	dbw 1, FORESIGHT
 	dbw 7, QUICK_ATTACK
 	dbw 13, DOUBLE_TEAM
-	dbw 19, SONICBOOM
 	dbw 25, DETECT
 	dbw 31, SUPERSONIC
 	dbw 37, WING_ATTACK

@@ -217,7 +217,6 @@ CharmanderEvosAttacks:
 	dbw 25, SCARY_FACE
 	dbw 31, FLAMETHROWER
 	dbw 37, SLASH
-	dbw 43, DRAGON_RAGE
 	dbw 49, FIRE_SPIN
 	db 0 ; no more level-up moves
 
@@ -233,7 +232,6 @@ CharmeleonEvosAttacks:
 	dbw 27, SCARY_FACE
 	dbw 34, FLAMETHROWER
 	dbw 41, SLASH
-	dbw 48, DRAGON_RAGE
 	dbw 55, FIRE_SPIN
 	db 0 ; no more level-up moves
 
@@ -250,7 +248,6 @@ CharizardEvosAttacks:
 	dbw 34, FLAMETHROWER
 	dbw 36, WING_ATTACK
 	dbw 44, SLASH
-	dbw 54, DRAGON_RAGE
 	dbw 64, FIRE_SPIN
 	db 0 ; no more level-up moves
 
@@ -1231,7 +1228,6 @@ MagnemiteEvosAttacks:
 	dbw 1, TACKLE
 	dbw 6, THUNDERSHOCK
 	dbw 11, SUPERSONIC
-	dbw 16, SONICBOOM
 	dbw 21, THUNDER_WAVE
 	dbw 27, LOCK_ON
 	dbw 33, SWIFT
@@ -1244,10 +1240,8 @@ MagnetonEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, THUNDERSHOCK
 	dbw 1, SUPERSONIC
-	dbw 1, SONICBOOM
 	dbw 6, THUNDERSHOCK
 	dbw 11, SUPERSONIC
-	dbw 16, SONICBOOM
 	dbw 21, THUNDER_WAVE
 	dbw 27, LOCK_ON
 	dbw 35, TRI_ATTACK
@@ -1489,7 +1483,6 @@ VoltorbEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 9, SCREECH
-	dbw 17, SONICBOOM
 	dbw 23, SELFDESTRUCT
 	dbw 29, ROLLOUT
 	dbw 33, LIGHT_SCREEN
@@ -1502,10 +1495,8 @@ ElectrodeEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, SCREECH
-	dbw 1, SONICBOOM
 	dbw 1, SELFDESTRUCT
 	dbw 9, SCREECH
-	dbw 17, SONICBOOM
 	dbw 23, SELFDESTRUCT
 	dbw 29, ROLLOUT
 	dbw 34, LIGHT_SCREEN
@@ -1902,7 +1893,6 @@ GyaradosEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, THRASH
 	dbw 20, BITE
-	dbw 25, DRAGON_RAGE
 	dbw 30, LEER
 	dbw 35, TWISTER
 	dbw 40, HYDRO_PUMP
@@ -2127,7 +2117,6 @@ DratiniEvosAttacks:
 	dbw 1, LEER
 	dbw 8, THUNDER_WAVE
 	dbw 15, TWISTER
-	dbw 22, DRAGON_RAGE
 	dbw 29, SLAM
 	dbw 36, AGILITY
 	dbw 43, SAFEGUARD
@@ -2144,7 +2133,6 @@ DragonairEvosAttacks:
 	dbw 1, TWISTER
 	dbw 8, THUNDER_WAVE
 	dbw 15, TWISTER
-	dbw 22, DRAGON_RAGE
 	dbw 29, SLAM
 	dbw 38, AGILITY
 	dbw 47, SAFEGUARD
@@ -2160,7 +2148,6 @@ DragoniteEvosAttacks:
 	dbw 1, TWISTER
 	dbw 8, THUNDER_WAVE
 	dbw 15, TWISTER
-	dbw 22, DRAGON_RAGE
 	dbw 29, SLAM
 	dbw 38, AGILITY
 	dbw 47, SAFEGUARD

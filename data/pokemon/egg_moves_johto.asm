@@ -162,7 +162,6 @@ LedybaEggMoves:
 SpinarakEggMoves:
 	dw PSYBEAM
 	dw DISABLE
-	dw SONICBOOM
 	dw BATON_PASS
 	dw PURSUIT
 	dw GROWTH
