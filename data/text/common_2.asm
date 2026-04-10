@@ -256,8 +256,7 @@ _CantUseItemText::
 	prompt
 
 _UseCutText::
-	text_ram wStringBuffer2
-	text " used"
+	text "<PLAYER> used"
 	line "CUT!"
 	prompt
 
@@ -273,8 +272,7 @@ _BlindingFlashText::
 	text_end
 
 _UsedSurfText::
-	text_ram wStringBuffer2
-	text " used"
+	text "<PLAYER> used"
 	line "SURF!"
 	done
 
@@ -294,8 +292,7 @@ _AskSurfText::
 	done
 
 _UseWaterfallText::
-	text_ram wStringBuffer2
-	text " used"
+	text "<PLAYER> used"
 	line "WATERFALL!"
 	done
 
@@ -310,8 +307,7 @@ _AskWaterfallText::
 	done
 
 _UseDigText::
-	text_ram wStringBuffer2
-	text " used"
+	text "<PLAYER> used"
 	line "DIG!"
 	done
 
@@ -343,8 +339,7 @@ _AlreadyUsingStrengthText::
 	prompt
 
 _UseStrengthText::
-	text_ram wStringBuffer2
-	text " used"
+	text "<PLAYER> used"
 	line "STRENGTH!"
 	done
 
@@ -373,8 +368,7 @@ _BouldersMayMoveText::
 	done
 
 _UseWhirlpoolText::
-	text_ram wStringBuffer2
-	text " used"
+	text "<PLAYER> used"
 	line "WHIRLPOOL!"
 	prompt
 
@@ -395,8 +389,7 @@ _AskWhirlpoolText::
 	done
 
 _UseHeadbuttText::
-	text_ram wStringBuffer2
-	text " did a"
+	text "<PLAYER> did a"
 	line "HEADBUTT!"
 	prompt
 
@@ -413,8 +406,7 @@ _AskHeadbuttText::
 	done
 
 _UseRockSmashText::
-	text_ram wStringBuffer2
-	text " used"
+	text "<PLAYER> used"
 	line "ROCK SMASH!"
 	prompt
 

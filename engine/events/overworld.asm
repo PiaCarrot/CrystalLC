@@ -108,8 +108,8 @@ CheckPartyMove:
 	ret
 
 CheckForHMMoveItem:
-; Check if the HM item for move index hl is in the bag.
-; Return carry if item is not found or hl is not an HM move.
+; Check if the field-move TM/HM item for move index hl is in the bag.
+; Return carry if item is not found or hl is not a supported move.
 	cphl16 CUT
 	ld de, HM_CUT
 	jr z, .check_item
@@ -130,6 +130,12 @@ CheckForHMMoveItem:
 	jr z, .check_item
 	cphl16 WATERFALL
 	ld de, HM_WATERFALL
+	jr z, .check_item
+	cphl16 HEADBUTT
+	ld de, TM_HEADBUTT
+	jr z, .check_item
+	cphl16 ROCK_SMASH
+	ld de, TM_ROCK_SMASH
 	jr z, .check_item
 	scf
 	ret
@@ -1309,7 +1315,7 @@ HeadbuttScript:
 
 TryHeadbuttOW::
 	ld hl, HEADBUTT
-	call CheckPartyMoveIndex
+	call CheckForHMMoveItem
 	jr c, .no
 
 	ld a, BANK(AskHeadbuttScript)
@@ -1433,7 +1439,7 @@ AskRockSmashText:
 
 HasRockSmash:
 	ld hl, ROCK_SMASH
-	call CheckPartyMoveIndex
+	call CheckForHMMoveItem
 	; a = carry ? TRUE : FALSE
 	sbc a
 	and TRUE
