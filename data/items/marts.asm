@@ -53,16 +53,13 @@ MartCherrygroveDex:
 	dw AWAKENING
 
 MartViolet:
-	db 10 ; # items
+	db 7 ; # items
 	dw POKE_BALL
 	dw POTION
 	dw ESCAPE_ROPE
 	dw ANTIDOTE
 	dw PARLYZ_HEAL
 	dw AWAKENING
-	dw X_DEFEND
-	dw X_ATTACK
-	dw X_SPEED
 	dw FLOWER_MAIL
 
 MartAzalea:
@@ -107,14 +104,9 @@ MartGoldenrod2F2:
 	dw FLOWER_MAIL
 
 MartGoldenrod3F:
-	db 7 ; # items
-	dw X_SPEED
-	dw X_SPECIAL
-	dw X_DEFEND
-	dw X_ATTACK
-	dw DIRE_HIT
-	dw GUARD_SPEC
-	dw X_ACCURACY
+	db 2 ; # items
+	dw PP_UP
+	dw HP_UP
 
 MartGoldenrod4F:
 	db 5 ; # items
@@ -197,7 +189,7 @@ MartMahogany2:
 	dw FLOWER_MAIL
 
 MartBlackthorn:
-	db 9 ; # items
+	db 7 ; # items
 	dw GREAT_BALL
 	dw ULTRA_BALL
 	dw HYPER_POTION
@@ -205,8 +197,6 @@ MartBlackthorn:
 	dw FULL_HEAL
 	dw REVIVE
 	dw MAX_REPEL
-	dw X_DEFEND
-	dw X_ATTACK
 
 MartViridian:
 	db 9 ; # items
@@ -231,15 +221,13 @@ MartPewter:
 	dw BURN_HEAL
 
 MartCerulean:
-	db 9 ; # items
+	db 7 ; # items
 	dw GREAT_BALL
 	dw ULTRA_BALL
 	dw SUPER_POTION
 	dw SUPER_REPEL
 	dw FULL_HEAL
-	dw X_DEFEND
-	dw X_ATTACK
-	dw DIRE_HIT
+	dw PP_UP
 	dw SURF_MAIL
 
 MartLavender:
@@ -310,14 +298,9 @@ MartCeladon5F1:
 	dw CALCIUM
 
 MartCeladon5F2:
-	db 7 ; # items
-	dw X_ACCURACY
-	dw GUARD_SPEC
-	dw DIRE_HIT
-	dw X_ATTACK
-	dw X_DEFEND
-	dw X_SPEED
-	dw X_SPECIAL
+	db 2 ; # items
+	dw HP_UP
+	dw PP_UP
 
 MartFuchsia:
 	db 7 ; # items
@@ -330,14 +313,12 @@ MartFuchsia:
 	dw FLOWER_MAIL
 
 MartSaffron:
-	db 8 ; # items
+	db 6 ; # items
 	dw GREAT_BALL
 	dw ULTRA_BALL
 	dw HYPER_POTION
 	dw MAX_POTION
 	dw FULL_HEAL
-	dw X_ATTACK
-	dw X_DEFEND
 	dw FLOWER_MAIL
 
 MartMtMoon:

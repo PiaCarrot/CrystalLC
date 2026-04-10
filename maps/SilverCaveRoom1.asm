@@ -21,8 +21,8 @@ SilverCaveRoom1EscapeRope:
 SilverCaveRoom1UltraBall:
 	itemball ULTRA_BALL
 
-SilverCaveRoom1HiddenDireHit:
-	hiddenitem DIRE_HIT, EVENT_SILVER_CAVE_ROOM_1_HIDDEN_DIRE_HIT
+SilverCaveRoom1HiddenPpUp:
+	hiddenitem PP_UP, EVENT_SILVER_CAVE_ROOM_1_HIDDEN_PP_UP
 
 SilverCaveRoom1HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_SILVER_CAVE_ROOM_1_HIDDEN_ULTRA_BALL
@@ -37,7 +37,7 @@ SilverCaveRoom1_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 16, 23, BGEVENT_ITEM, SilverCaveRoom1HiddenDireHit
+	bg_event 16, 23, BGEVENT_ITEM, SilverCaveRoom1HiddenPpUp
 	bg_event 17, 12, BGEVENT_ITEM, SilverCaveRoom1HiddenUltraBall
 
 	def_object_events
