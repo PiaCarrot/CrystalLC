@@ -2016,6 +2016,7 @@ HandleEnemyMonFaint:
 	dec a
 	jr nz, .trainer
 
+	call AwardBattleLP
 	ld a, 1
 	ld [wBattleEnded], a
 	ret
@@ -2357,6 +2358,7 @@ WinTrainerBattle:
 	and a
 	ret nz
 
+	call AwardBattleLP
 	ld a, [wInBattleTowerBattle]
 	bit IN_BATTLE_TOWER_BATTLE_F, a
 	jr nz, .battle_tower
@@ -2528,6 +2530,62 @@ AddBattleMoneyToAccount:
 	ld a, HIGH(MAX_MONEY) ; mid
 	ld [hli], a
 	ld [hl], LOW(MAX_MONEY)
+	ret
+
+AwardBattleLP:
+	ld a, [wBattleMode]
+	dec a
+	jr z, .wild
+
+	call IsGymLeader
+	jr c, .boss
+
+	ld a, [wOtherTrainerClass]
+	cp RIVAL1
+	jr z, .rival
+	cp RIVAL2
+	jr z, .rival
+
+	ld de, 200
+	jr .add
+
+.wild
+	ld de, 50
+	jr .add
+
+.rival
+	ld de, 500
+	jr .add
+
+.boss
+	ld de, 2000
+
+.add
+	ld hl, wLP + 2
+	ld a, [hl]
+	add e
+	ld [hld], a
+	ld a, [hl]
+	adc d
+	ld [hld], a
+	ld a, [hl]
+	adc 0
+	ld [hl], a
+
+	ld hl, wLP + 2
+	ld a, [hld]
+	cp LOW(999999)
+	ld a, [hld]
+	sbc HIGH(999999)
+	ld a, [hl]
+	sbc HIGH(999999 >> 8)
+	ret c
+
+	ld a, HIGH(999999 >> 8)
+	ld [hli], a
+	ld a, HIGH(999999)
+	ld [hli], a
+	ld [hl], LOW(999999)
 	ret
 
 PlayVictoryMusic:

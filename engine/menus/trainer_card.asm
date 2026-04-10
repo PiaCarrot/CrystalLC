@@ -279,7 +279,7 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	rst PlaceString
 	hlcoord 13, 10
 	ld de, wLP
-	lb bc, 2, 6
+	lb bc, 3, 6
 	call PrintNum
 	call TrainerCard_Page1_PrintGameTime
 	hlcoord 2, 8
