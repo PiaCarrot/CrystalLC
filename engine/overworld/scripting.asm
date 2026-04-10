@@ -1757,6 +1757,9 @@ GetMoneyAccount:
 	and a
 	ld de, wMoney ; YOUR_MONEY
 	ret z
+	cp YOUR_LP
+	ld de, wLP ; YOUR_LP
+	ret z
 	ld de, wMomsMoney ; MOMS_MONEY
 	ret
 

@@ -15,6 +15,7 @@ DEF STRING_BUFFER_LENGTH EQU 19
 	const_def
 	const YOUR_MONEY ; 0
 	const MOMS_MONEY ; 1
+	const YOUR_LP    ; 2
 
 ; checkmoney/checkcoins return values
 	const_def
@@ -329,3 +330,4 @@ DEF UNOWN_WALL_MENU_HEADER_SIZE EQU 5
 	const MOVETUTOR_FLAMETHROWER ; 1
 	const MOVETUTOR_THUNDERBOLT  ; 2
 	const MOVETUTOR_ICE_BEAM     ; 3
+	const MOVETUTOR_WATER_GUN    ; 4
