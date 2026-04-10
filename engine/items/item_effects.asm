@@ -1190,7 +1190,7 @@ VitaminEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
 
-	jr c, RareCandy_StatBooster_ExitMenu
+	jmp c, RareCandy_StatBooster_ExitMenu
 
 	call RareCandy_StatBooster_GetParameters
 
@@ -1199,7 +1199,6 @@ VitaminEffect:
 	ld a, MON_EVS
 	call GetPartyParamLocation
 
-	ld d, 10
 	push bc
 	push hl
 	ld e, NUM_STATS
@@ -1213,32 +1212,35 @@ VitaminEffect:
 	ld b, a
 	dec e
 	jr nz, .count_evs
-	ld a, d
+	pop hl
+	pop bc
+	add hl, bc
+	ld a, [hl]
+	cp MAX_EV
+	jr nc, NoEffectMessage
+	ld d, a
+	ld a, MAX_EV
+	sub d
+	ld e, a
+
+	ld a, e
 	add c
 	ld c, a
 	adc b
 	sub c
 	ld b, a
-	ld e, d
 .decrease_evs_gained
 	farcall IsEvsGreaterThan510
-	jr nc, .check_ev_overflow
+	jr nc, .apply_ev_increase
 	dec e
 	dec bc
 	jr .decrease_evs_gained
-.check_ev_overflow
-	pop hl
-	pop bc
-
+.apply_ev_increase
 	ld a, e
 	and a
 	jr z, NoEffectMessage
 
-	add hl, bc
 	ld a, [hl]
-	cp 100
-	jr nc, NoEffectMessage
-
 	add e
 	ld [hl], a
 	call UpdateStatsAfterItem
