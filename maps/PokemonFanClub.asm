@@ -168,9 +168,9 @@ PokemonFanClubChairmanIWantYouToHaveThisText:
 	done
 
 PokemonFanClubChairmanItsARareCandyText:
-	text "It's a RARE CANDY"
-	line "that makes #MON"
-	cont "stronger."
+	text "It's a RESET CANDY"
+	line "that resets your"
+	cont "#MON's EVs."
 
 	para "I prefer making my"
 	line "#MON stronger"

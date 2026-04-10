@@ -1359,86 +1359,40 @@ RareCandyEffect:
 
 	call RareCandy_StatBooster_GetParameters
 
-	ld a, MON_LEVEL
+	ld a, MON_EVS
 	call GetPartyParamLocation
-
-	ld a, [hl]
-	cp MAX_LEVEL
-	jmp nc, NoEffectMessage
-
-	inc a
-	ld [hl], a
-	ld [wCurPartyLevel], a
-	push de
-	ld d, a
-	farcall CalcExpAtLevel
-
-	pop de
-	ld a, MON_EXP
-	call GetPartyParamLocation
-
-	ldh a, [hMultiplicand + 0]
-	ld [hli], a
-	ldh a, [hMultiplicand + 1]
-	ld [hli], a
-	ldh a, [hMultiplicand + 2]
-	ld [hl], a
-
-	ld a, MON_MAXHP
-	call GetPartyParamLocation
-	ld a, [hli]
-	ld b, a
-	ld c, [hl]
-	push bc
-	call UpdateStatsAfterItem
-
-	ld a, MON_MAXHP + 1
-	call GetPartyParamLocation
-
-	pop bc
-	ld a, [hld]
-	sub c
-	ld c, a
-	ld a, [hl]
-	sbc b
-	ld b, a
-	dec hl
-	ld a, [hl]
-	add c
-	ld [hld], a
-	ld a, [hl]
-	adc b
-	ld [hl], a
-	farcall LevelUpHappinessMod
-
-	ld a, PARTYMENUTEXT_LEVEL_UP
-	call ItemActionText
-
-	xor a ; PARTYMON
-	ld [wMonType], a
-	predef CopyMonToTempMon
-
-	hlcoord 9, 0
-	lb bc, 10, 9
-	call Textbox
-
-	hlcoord 11, 1
-	ld bc, 4
-	predef PrintTempMonStats
-
-	call WaitPressAorB_BlinkCursor
-
-	xor a ; PARTYMON
-	ld [wMonType], a
-	ld a, [wCurPartySpecies]
-	ld [wTempSpecies], a
-	predef LearnLevelMoves
-
+	push hl
+	ld e, NUM_STATS
 	xor a
-	ld [wForceEvolution], a
-	farcall EvolvePokemon
+.check_evs
+	or [hl]
+	inc hl
+	dec e
+	jr nz, .check_evs
+	pop hl
+	and a
+	jmp z, NoEffectMessage
+
+	ld e, NUM_STATS
+	xor a
+.clear_evs
+	ld [hli], a
+	dec e
+	jr nz, .clear_evs
+
+	call UpdateStatsAfterItem
+	call Play_SFX_FULL_HEAL
+	ld hl, ItemEVsResetText
+	call PrintText
+
+	ld c, HAPPINESS_USEDITEM
+	farcall ChangeHappiness
 
 	jmp UseDisposableItem
+
+ItemEVsResetText:
+	text_far _ItemEVsResetText
+	text_end
 
 HealPowderEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM

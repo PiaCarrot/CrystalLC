@@ -910,6 +910,11 @@ _ItemStatRoseText::
 	text " rose."
 	prompt
 
+_ItemEVsResetText::
+	text "The #MON's EVs"
+	line "were reset."
+	prompt
+
 _ItemCantUseOnMonText::
 	text "That can't be used"
 	line "on this #MON."

@@ -327,8 +327,8 @@ CalciumDesc:
 	next "of one #MON.@"
 
 RareCandyDesc:
-	db   "Raises level of a"
-	next "#MON by one.@"
+	db   "Resets a #MON's"
+	next "EVs to zero.@"
 
 XAccuracyDesc:
 	db   "Raises accuracy."

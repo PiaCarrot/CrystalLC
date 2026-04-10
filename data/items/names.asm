@@ -26,7 +26,7 @@ ItemNames::
 	li "CARBOS"       ; 0018
 	li "LUCKY PUNCH"  ; 0019
 	li "CALCIUM"      ; 001A
-	li "RARE CANDY"   ; 001B
+	li "RESET CANDY"  ; 001B
 	li "X ACCURACY"   ; 001C
 	li "LEAF STONE"   ; 001D
 	li "METAL POWDER" ; 001E
