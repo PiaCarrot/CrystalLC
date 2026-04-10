@@ -321,6 +321,41 @@ DEF MT01 EQU const_value
 	add_mt FLAMETHROWER
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
+	add_mt MEGA_PUNCH
+	add_mt RAZOR_WIND
+	add_mt SWORDS_DANCE
+	add_mt WHIRLWIND
+	add_mt MEGA_KICK
+	add_mt HORN_DRILL
+	add_mt BODY_SLAM
+	add_mt TAKE_DOWN
+	add_mt DOUBLE_EDGE
+	add_mt BUBBLEBEAM
+	add_mt WATER_GUN
+	add_mt PAY_DAY
+	add_mt SUBMISSION
+	add_mt COUNTER
+	add_mt SEISMIC_TOSS
+	add_mt RAGE
+	add_mt MEGA_DRAIN
+	add_mt DRAGON_RAGE
+	add_mt FISSURE
+	add_mt TELEPORT
+	add_mt MIMIC
+	add_mt REFLECT
+	add_mt BIDE
+	add_mt METRONOME
+	add_mt SELFDESTRUCT
+	add_mt EGG_BOMB
+	add_mt SKULL_BASH
+	add_mt SOFTBOILED
+	add_mt SKY_ATTACK
+	add_mt THUNDER_WAVE
+	add_mt PSYWAVE
+	add_mt EXPLOSION
+	add_mt ROCK_SLIDE
+	add_mt TRI_ATTACK
+	add_mt SUBSTITUTE
 DEF NUM_TUTORS = __tmhm_value__ - NUM_TMS - NUM_HMS - 1
 
 DEF NUM_TM_HM_TUTOR EQU NUM_TMS + NUM_HMS + NUM_TUTORS
