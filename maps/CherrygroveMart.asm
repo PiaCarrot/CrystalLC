@@ -64,6 +64,7 @@ CherrygroveMartMoveTutorScript:
 	ifequal HAVE_LESS, .NotEnoughLP
 	setval MOVETUTOR_WATER_GUN
 	writetext CherrygroveMartMoveTutorMoveText
+	waitbutton
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible

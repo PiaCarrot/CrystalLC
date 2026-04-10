@@ -898,7 +898,31 @@ CountStep:
 	inc [hl]
 	ld hl, wStepCount
 	inc [hl]
+	ld hl, wLP + 2
+	inc [hl]
+	jr nz, .check_lp_cap
+	dec hl
+	inc [hl]
+	jr nz, .check_lp_cap
+	dec hl
+	inc [hl]
+.check_lp_cap
+	ld hl, wLP + 2
+	ld a, [hld]
+	cp LOW(MAX_MONEY)
+	ld a, [hld]
+	sbc HIGH(MAX_MONEY)
+	ld a, [hl]
+	sbc HIGH(MAX_MONEY >> 8)
+	jr c, .skip_happiness
+	ld a, HIGH(MAX_MONEY >> 8)
+	ld [hli], a
+	ld a, HIGH(MAX_MONEY)
+	ld [hli], a
+	ld [hl], LOW(MAX_MONEY)
 	; Every 256 steps, increase the happiness of all your Pokemon.
+	ld a, [wStepCount]
+	and a
 	jr nz, .skip_happiness
 
 	farcall StepHappiness
