@@ -534,6 +534,49 @@ _MartAskMoreText::
 	line "else for you?"
 	done
 
+_LPMartWelcomeText::
+	text "Welcome! Exchange"
+	line "LP for held items!"
+	done
+
+_LPMartHowManyText::
+	text "How many?"
+	done
+
+_LPMartFinalPriceText::
+	text_decimal wItemQuantityChange, 1, 2
+	text " @"
+	text_ram wStringBuffer2
+	text "(S)"
+	line "will cost @"
+	text_decimal hMoneyTemp, 3, 6
+	text " LP."
+	done
+
+_LPMartThanksText::
+	text "Here you are."
+	line "Thank you!"
+	done
+
+_LPMartNoLPText::
+	text "You don't have"
+	line "enough LP."
+	done
+
+_LPMartPackFullText::
+	text "You can't carry"
+	line "any more items."
+	done
+
+_LPMartComeAgainText::
+	text "Please come again!"
+	done
+
+_LPMartAskMoreText::
+	text "Can I do anything"
+	line "else for you?"
+	done
+
 _MartBoughtText::
 	text "Got ¥@"
 	text_decimal hMoneyTemp, 3, 6

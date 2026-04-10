@@ -64,6 +64,22 @@ PlaceMoneyTopRight:
 	call CopyMenuHeader
 	jr PlaceMoneyTextbox
 
+PlaceLPTopRight:
+	ld hl, MoneyTopRightMenuHeader
+	call CopyMenuHeader
+	call MenuBox
+	call MenuBoxCoord2Tile
+	ld de, SCREEN_WIDTH + 1
+	add hl, de
+	push hl
+	ld de, LPString
+	rst PlaceString
+	pop hl
+	inc hl
+	ld de, wLP
+	lb bc, 3, 6
+	jmp PrintNum
+
 PlaceMoneyBottomLeft:
 	ld hl, MoneyBottomLeftMenuHeader
 	call CopyMenuHeader
@@ -134,6 +150,8 @@ MoneyString:
 	db "MONEY@"
 CoinString:
 	db "COIN@"
+LPString:
+	db "LP@"
 ShowMoney_TerminatorString:
 	db "@"
 

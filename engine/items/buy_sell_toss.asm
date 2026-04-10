@@ -186,6 +186,11 @@ BuySell_DisplaySubtotal:
 	inc hl
 	ld de, hMoneyTemp
 	lb bc, PRINTNUM_MONEY | 3, 6
+	ld a, [wMartType]
+	cp MARTTYPE_LP
+	jr nz, .print
+	lb bc, 3, 6
+.print
 	call PrintNum
 	jmp WaitBGMap
 

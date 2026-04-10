@@ -23,6 +23,7 @@ MartTypeDialogs:
 	dw BargainShop
 	dw Pharmacist
 	dw RooftopSale
+	dw LPMartDialog
 	assert_table_length NUM_MART_TYPES
 
 MartDialog:
@@ -89,7 +90,19 @@ RooftopSale:
 	ld hl, MartComeAgainText
 	jmp MartTextbox
 
+LPMartDialog:
+	ld b, BANK(HeldItemLPMart)
+	ld de, HeldItemLPMart
+	call LoadMartPointer
+	call ReadMart
+	ld a, MARTTYPE_LP
+	ld [wMartType], a
+	xor a ; LPMART_WELCOME
+	ld [wMartJumptableIndex], a
+	jmp LPMart
+
 INCLUDE "data/items/rooftop_sale.asm"
+INCLUDE "data/items/lp_shop.asm"
 
 LoadMartPointer:
 	ld a, b
@@ -133,8 +146,9 @@ GetMart:
 	const STANDARDMART_TOPMENU        ; 1
 	const STANDARDMART_BUY            ; 2
 	const STANDARDMART_SELL           ; 3
-	const STANDARDMART_QUIT           ; 4
-	const STANDARDMART_ANYTHINGELSE   ; 5
+	const STANDARDMART_LP             ; 4
+	const STANDARDMART_QUIT           ; 5
+	const STANDARDMART_ANYTHINGELSE   ; 6
 
 DEF STANDARDMART_EXIT EQU -1
 
@@ -154,6 +168,7 @@ StandardMart:
 	dw .TopMenu
 	dw .Buy
 	dw .Sell
+	dw .LPShop
 	dw .Quit
 	dw .AnythingElse
 
@@ -174,6 +189,8 @@ StandardMart:
 	jr z, .buy
 	cp $2
 	jr z, .sell
+	cp $3
+	jr z, .lp
 .quit
 	ld a, STANDARDMART_QUIT
 	ret
@@ -182,6 +199,9 @@ StandardMart:
 	ret
 .sell
 	ld a, STANDARDMART_SELL
+	ret
+.lp
+	ld a, STANDARDMART_LP
 	ret
 
 .Buy:
@@ -198,6 +218,12 @@ StandardMart:
 	ld a, STANDARDMART_ANYTHINGELSE
 	ret
 
+.LPShop:
+	call ExitMenu
+	call OpenLPMartShop
+	ld a, STANDARDMART_ANYTHINGELSE
+	ret
+
 .Quit:
 	call ExitMenu
 	ld hl, MartComeAgainText
@@ -210,6 +236,109 @@ StandardMart:
 	ld hl, MartAskMoreText
 	call PrintText
 	ld a, STANDARDMART_TOPMENU
+	ret
+
+OpenLPMartShop:
+	ld a, [wMartType]
+	push af
+	ld a, [wMartPointerBank]
+	push af
+	ld a, [wMartPointer]
+	push af
+	ld a, [wMartPointer + 1]
+	push af
+
+	ld b, BANK(HeldItemLPMart)
+	ld de, HeldItemLPMart
+	call LoadMartPointer
+	call ReadMart
+	ld a, MARTTYPE_LP
+	ld [wMartType], a
+	call LoadStandardMenuHeader
+	ld hl, LPMartWelcomeText
+	call MartTextbox
+	call BuyMenu
+	ld hl, LPMartComeAgainText
+	call MartTextbox
+
+	pop af
+	ld [wMartPointer + 1], a
+	pop af
+	ld [wMartPointer], a
+	pop af
+	ld [wMartPointerBank], a
+	pop af
+	ld [wMartType], a
+	ret
+
+; LPMart.MartFunctions indexes
+	const_def
+	const LPMART_WELCOME ; 0
+	const LPMART_TOPMENU ; 1
+	const LPMART_BUY     ; 2
+	const LPMART_QUIT    ; 3
+	const LPMART_ASKMORE ; 4
+
+LPMart:
+.loop
+	ld a, [wMartJumptableIndex]
+	ld hl, .MartFunctions
+	call JumpTable
+	ld [wMartJumptableIndex], a
+	cp STANDARDMART_EXIT
+	jr nz, .loop
+	ret
+
+.MartFunctions:
+	dw .Welcome
+	dw .TopMenu
+	dw .Buy
+	dw .Quit
+	dw .AskMore
+
+.Welcome:
+	call LoadStandardMenuHeader
+	ld hl, LPMartWelcomeText
+	call PrintText
+	ld a, LPMART_TOPMENU
+	ret
+
+.TopMenu:
+	ld hl, MenuHeader_BuyQuit
+	call CopyMenuHeader
+	call VerticalMenu
+	jr c, .quit
+	ld a, [wMenuCursorY]
+	dec a
+	jr z, .buy
+
+.quit
+	ld a, LPMART_QUIT
+	ret
+
+.buy
+	ld a, LPMART_BUY
+	ret
+
+.Buy:
+	call ExitMenu
+	call BuyMenu
+	and a
+	ld a, LPMART_ASKMORE
+	ret
+
+.Quit:
+	call ExitMenu
+	ld hl, LPMartComeAgainText
+	call MartTextbox
+	ld a, STANDARDMART_EXIT
+	ret
+
+.AskMore:
+	call LoadStandardMenuHeader
+	ld hl, LPMartAskMoreText
+	call PrintText
+	ld a, LPMART_TOPMENU
 	ret
 
 FarCopyMart: ; copy the mart directly
@@ -424,7 +553,9 @@ MartAskPurchaseQuantity:
 	jmp z, StandardMartAskPurchaseQuantity
 	cp 1
 	jmp z, BargainShopAskPurchaseQuantity
-	jmp RooftopSaleAskPurchaseQuantity
+	cp 2
+	jmp z, RooftopSaleAskPurchaseQuantity
+	jmp LPShopAskPurchaseQuantity
 
 GetMartDialogGroup:
 	ld a, [wMartType]
@@ -442,6 +573,7 @@ GetMartDialogGroup:
 	dwb .BargainShopPointers, 1
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
+	dwb .LPMartPointers, 3
 
 .StandardMartPointers:
 	dw MartHowManyText
@@ -475,8 +607,16 @@ GetMartDialogGroup:
 	dw PharmacyThanksText
 	dw BuyMenuLoop
 
+.LPMartPointers:
+	dw LPMartHowManyText
+	dw LPMartFinalPriceText
+	dw LPMartNoLPText
+	dw LPMartPackFullText
+	dw LPMartThanksText
+	dw BuyMenuLoop
+
 BuyMenuLoop:
-	farcall PlaceMoneyTopRight
+	call PlaceMartBalanceTopRight
 	call UpdateSprites
 	ld hl, MenuHeader_Buy
 	call CopyMenuHeader
@@ -492,23 +632,23 @@ BuyMenuLoop:
 	call SpeechTextbox
 	ld a, [wMenuJoypad]
 	cp PAD_B
-	jr z, .set_carry
+	jr z, BuyMenuLoop_SetCarry
 	cp PAD_A
-	jr z, .useless_pointer
+	jr z, BuyMenuLoop_CheckSelection
 
-.useless_pointer
+BuyMenuLoop_CheckSelection:
 	call MartAskPurchaseQuantity
-	jr c, .cancel
+	jr c, BuyMenuLoop_Cancel
 	call MartConfirmPurchase
-	jr c, .cancel
-	ld de, wMoney
+	jr c, BuyMenuLoop_Cancel
+	call GetMartBalancePointer
 	ld bc, hMoneyTemp
 	ld a, 3 ; useless load
 	call CompareMoney
-	jr c, .insufficient_funds
+	jr c, BuyMenuLoop_InsufficientFunds
 	ld hl, wNumItems
 	call ReceiveItem
-	jr nc, .insufficient_bag_space
+	jr nc, BuyMenuLoop_InsufficientBagSpace
 	ld a, [wMartItemID]
 	ld e, a
 	ld d, 0
@@ -516,30 +656,47 @@ BuyMenuLoop:
 	ld hl, wBargainShopFlags
 	call FlagAction
 	call PlayTransactionSound
-	ld de, wMoney
+	call GetMartBalancePointer
 	ld bc, hMoneyTemp
 	call TakeMoney
 	ld a, MARTTEXT_HERE_YOU_GO
 	call LoadBuyMenuText
 	call JoyWaitAorB
 
-.cancel
+BuyMenuLoop_Cancel:
 	call SpeechTextbox
 	and a
 	ret
 
-.set_carry
+PlaceMartBalanceTopRight:
+	ld a, [wMartType]
+	cp MARTTYPE_LP
+	jr nz, .money
+	farjp PlaceLPTopRight
+
+.money
+	farjp PlaceMoneyTopRight
+
+GetMartBalancePointer:
+	ld a, [wMartType]
+	cp MARTTYPE_LP
+	ld de, wLP
+	ret z
+	ld de, wMoney
+	ret
+
+BuyMenuLoop_SetCarry:
 	scf
 	ret
 
-.insufficient_bag_space
+BuyMenuLoop_InsufficientBagSpace:
 	ld a, MARTTEXT_BAG_FULL
 	call LoadBuyMenuText
 	call JoyWaitAorB
 	and a
 	ret
 
-.insufficient_funds
+BuyMenuLoop_InsufficientFunds:
 	ld a, MARTTEXT_NOT_ENOUGH_MONEY
 	call LoadBuyMenuText
 	call JoyWaitAorB
@@ -631,6 +788,35 @@ RooftopSaleAskPurchaseQuantity:
 	ld e, a
 	ret
 
+LPShopAskPurchaseQuantity:
+	ld a, MARTTEXT_HOW_MANY
+	call LoadBuyMenuText
+	call .GetLPPrice
+	ld a, MAX_ITEM_STACK
+	ld [wItemQuantity], a
+	farcall RooftopSale_SelectQuantityToBuy
+	jmp ExitMenu
+
+.GetLPPrice:
+	ld a, [wMartItemID]
+	ld e, a
+	ld d, 0
+	ld hl, wMartPointer
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	inc hl
+	inc hl
+	add hl, de
+	add hl, de
+	add hl, de
+	add hl, de
+	inc hl
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	ret
+
 MartHowManyText:
 	text_far _MartHowManyText
 	text_end
@@ -669,6 +855,11 @@ MenuHeader_Buy:
 	ld bc, SCREEN_WIDTH
 	add hl, bc
 	ld c, PRINTNUM_LEADINGZEROS | PRINTNUM_MONEY | 3
+	ld a, [wMartType]
+	cp MARTTYPE_LP
+	jr nz, .print
+	ld c, PRINTNUM_LEADINGZEROS | 3
+.print
 	jmp PrintBCDNumber
 
 HerbShopLadyIntroText:
@@ -859,9 +1050,22 @@ MenuHeader_BuySell:
 
 .MenuData
 	db STATICMENU_CURSOR ; strings
-	db 3 ; items
+	db 4 ; items
 	db "BUY@"
 	db "SELL@"
+	db "LP SHOP@"
+	db "QUIT@"
+
+MenuHeader_BuyQuit:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 9, 6
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData
+	db STATICMENU_CURSOR ; strings
+	db 2 ; items
+	db "BUY@"
 	db "QUIT@"
 
 MartThanksText:
@@ -886,6 +1090,38 @@ MartComeAgainText:
 
 MartAskMoreText:
 	text_far _MartAskMoreText
+	text_end
+
+LPMartWelcomeText:
+	text_far _LPMartWelcomeText
+	text_end
+
+LPMartHowManyText:
+	text_far _LPMartHowManyText
+	text_end
+
+LPMartFinalPriceText:
+	text_far _LPMartFinalPriceText
+	text_end
+
+LPMartThanksText:
+	text_far _LPMartThanksText
+	text_end
+
+LPMartNoLPText:
+	text_far _LPMartNoLPText
+	text_end
+
+LPMartPackFullText:
+	text_far _LPMartPackFullText
+	text_end
+
+LPMartComeAgainText:
+	text_far _LPMartComeAgainText
+	text_end
+
+LPMartAskMoreText:
+	text_far _LPMartAskMoreText
 	text_end
 
 MartBoughtText:

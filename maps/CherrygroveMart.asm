@@ -2,6 +2,7 @@
 	const CHERRYGROVEMART_CLERK
 	const CHERRYGROVEMART_COOLTRAINER_M
 	const CHERRYGROVEMART_YOUNGSTER
+	const CHERRYGROVEMART_LP_CLERK
 
 CherrygroveMart_MapScripts:
 	def_scene_scripts
@@ -40,6 +41,15 @@ CherrygroveMartCooltrainerMScript:
 CherrygroveMartYoungsterScript:
 	jumptextfaceplayer CherrygroveMartYoungsterText
 
+CherrygroveMartLPClerkScript:
+	faceplayer
+	opentext
+	writetext CherrygroveMartLPClerkText
+	waitbutton
+	pokemart MARTTYPE_LP, MART_CHERRYGROVE
+	closetext
+	end
+
 CherrygroveMartCooltrainerMText:
 	text "They're fresh out"
 	line "of # BALLS!"
@@ -69,6 +79,13 @@ CherrygroveMartYoungsterText:
 	line "ANTIDOTE with you."
 	done
 
+CherrygroveMartLPClerkText:
+	text "I'm testing our LP"
+	line "held item stock."
+
+	para "Take a look!"
+	done
+
 CherrygroveMart_MapEvents:
 	db 0, 0 ; filler
 
@@ -84,3 +101,4 @@ CherrygroveMart_MapEvents:
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartClerkScript, -1
 	object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartCooltrainerMScript, -1
 	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMartYoungsterScript, -1
+	object_event  5,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygroveMartLPClerkScript, -1
