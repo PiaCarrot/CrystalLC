@@ -11,7 +11,7 @@ AsleepTreeMonsNite:
 	dw EKANS
 	dw EXEGGCUTE
 	dw LEDYBA
-	dw AIPOM
+	dw EXEGGCUTE
 	dw -1 ; end
 
 AsleepTreeMonsDay:
@@ -19,7 +19,7 @@ AsleepTreeMonsDay:
 	dw HOOTHOOT
 	dw HOOTHOOT
 	dw SPINARAK
-	dw HERACROSS
+	dw PINECO
 	dw -1 ; end
 
 AsleepTreeMonsMorn:
@@ -27,5 +27,5 @@ AsleepTreeMonsMorn:
 	dw HOOTHOOT
 	dw HOOTHOOT
 	dw SPINARAK
-	dw HERACROSS
+	dw PINECO
 	dw -1 ; end

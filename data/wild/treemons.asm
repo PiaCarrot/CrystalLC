@@ -24,17 +24,17 @@ TreeMonSet_Canyon:
 	dbbw 50, 10, SPEAROW
 	dbbw 15, 10, SPEAROW
 	dbbw 15, 10, SPEAROW
-	dbbw 10, 10, AIPOM
-	dbbw  5, 10, AIPOM
-	dbbw  5, 10, AIPOM
+	dbbw 10, 10, EXEGGCUTE
+	dbbw  5, 10, EXEGGCUTE
+	dbbw  5, 10, EXEGGCUTE
 	db -1
 ; rare
 	dbbw 50, 10, SPEAROW
-	dbbw 15, 10, HERACROSS
-	dbbw 15, 10, HERACROSS
-	dbbw 10, 10, AIPOM
-	dbbw  5, 10, AIPOM
-	dbbw  5, 10, AIPOM
+	dbbw 15, 10, PINECO
+	dbbw 15, 10, PINECO
+	dbbw 10, 10, EXEGGCUTE
+	dbbw  5, 10, EXEGGCUTE
+	dbbw  5, 10, EXEGGCUTE
 	db -1
 
 TreeMonSet_Town:
@@ -42,17 +42,17 @@ TreeMonSet_Town:
 	dbbw 50, 10, SPEAROW
 	dbbw 15, 10, EKANS
 	dbbw 15, 10, SPEAROW
-	dbbw 10, 10, AIPOM
-	dbbw  5, 10, AIPOM
-	dbbw  5, 10, AIPOM
+	dbbw 10, 10, EXEGGCUTE
+	dbbw  5, 10, EXEGGCUTE
+	dbbw  5, 10, EXEGGCUTE
 	db -1
 ; rare
 	dbbw 50, 10, SPEAROW
-	dbbw 15, 10, HERACROSS
-	dbbw 15, 10, HERACROSS
-	dbbw 10, 10, AIPOM
-	dbbw  5, 10, AIPOM
-	dbbw  5, 10, AIPOM
+	dbbw 15, 10, PINECO
+	dbbw 15, 10, PINECO
+	dbbw 10, 10, EXEGGCUTE
+	dbbw  5, 10, EXEGGCUTE
+	dbbw  5, 10, EXEGGCUTE
 	db -1
 
 TreeMonSet_Route:
@@ -129,5 +129,5 @@ TreeMonSet_Forest:
 
 TreeMonSet_Rock:
 	dbbw 90, 15, KRABBY
-	dbbw 10, 15, SHUCKLE
+	dbbw 10, 15, KRABBY
 	db -1

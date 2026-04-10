@@ -102,17 +102,17 @@ FishGroups:
 .Qwilfish_Swarm_Old:
 	dbbw  70 percent + 1, 5, MAGIKARP
 	dbbw  85 percent + 1, 5, MAGIKARP
-	dbbw 100 percent,     5, QWILFISH
+	dbbw 100 percent,     5, TENTACOOL
 .Qwilfish_Swarm_Good:
 	dbbw  35 percent,     20, MAGIKARP
-	dbbw  70 percent,     20, QWILFISH
-	dbbw  90 percent + 1, 20, QWILFISH
+	dbbw  70 percent,     20, TENTACOOL
+	dbbw  90 percent + 1, 20, TENTACOOL
 	dbbw 100 percent,     10, TIME_GROUP
 .Qwilfish_Swarm_Super:
-	dbbw  40 percent,     40, QWILFISH
+	dbbw  40 percent,     40, TENTACOOL
 	dbbw  70 percent,     11, TIME_GROUP
-	dbbw  90 percent + 1, 40, QWILFISH
-	dbbw 100 percent,     40, QWILFISH
+	dbbw  90 percent + 1, 40, TENTACOOL
+	dbbw 100 percent,     40, TENTACOOL
 
 .Remoraid_Swarm_Old:
 	dbbw  70 percent + 1, 10, MAGIKARP
@@ -190,7 +190,7 @@ FishGroups:
 	dbbw  40 percent,     40, TENTACOOL
 	dbbw  70 percent,     21, TIME_GROUP
 	dbbw  90 percent + 1, 40, MAGIKARP
-	dbbw 100 percent,     40, QWILFISH
+	dbbw 100 percent,     40, TENTACOOL
 
 .Remoraid_Old:
 	dbbw  70 percent + 1, 10, MAGIKARP
@@ -209,8 +209,8 @@ FishGroups:
 
 TimeFishGroups:
 	;     day             nite
-	dbwbw 20, CORSOLA,    20, STARYU     ; 0
-	dbwbw 40, CORSOLA,    40, STARYU     ; 1
+	dbwbw 20, STARYU,    20, STARYU     ; 0
+	dbwbw 40, STARYU,    40, STARYU     ; 1
 	dbwbw 20, SHELLDER,   20, SHELLDER   ; 2
 	dbwbw 40, SHELLDER,   40, SHELLDER   ; 3
 	dbwbw 20, GOLDEEN,    20, GOLDEEN    ; 4
@@ -219,8 +219,8 @@ TimeFishGroups:
 	dbwbw 40, POLIWAG,    40, POLIWAG    ; 7
 	dbwbw 20, DRATINI,    20, DRATINI    ; 8
 	dbwbw 40, DRATINI,    40, DRATINI    ; 9
-	dbwbw 20, QWILFISH,   20, QWILFISH   ; 10
-	dbwbw 40, QWILFISH,   40, QWILFISH   ; 11
+	dbwbw 20, TENTACOOL,   20, TENTACOOL   ; 10
+	dbwbw 40, TENTACOOL,   40, TENTACOOL   ; 11
 	dbwbw 20, REMORAID,   20, REMORAID   ; 12
 	dbwbw 40, REMORAID,   40, REMORAID   ; 13
 	dbwbw 20, MAGIKARP,   20, MAGIKARP   ; 14

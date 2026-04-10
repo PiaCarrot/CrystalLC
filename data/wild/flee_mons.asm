@@ -4,7 +4,7 @@ FleeMons:
 SometimesFleeMons:
 	dw MAGNEMITE
 	dw GRIMER
-	dw TANGELA
+	dw BELLSPROUT
 	dw MR__MIME
 	dw EEVEE
 	dw PORYGON
@@ -14,7 +14,7 @@ SometimesFleeMons:
 	dw EEVEE
 	dw UNOWN
 	dw SNUBBULL
-	dw HERACROSS
+	dw PINECO
 	dw -1
 
 OftenFleeMons:
@@ -23,7 +23,7 @@ OftenFleeMons:
 	dw ZAPDOS
 	dw MOLTRES
 	dw WOOPER
-	dw DELIBIRD
+	dw SMOOCHUM
 	dw PHANPY
 	dw TEDDIURSA
 	dw -1

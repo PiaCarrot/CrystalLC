@@ -8,6 +8,6 @@ ContestMons:
 	dbwbb  5, WEEDLE,   12, 15
 	dbwbb 10, VENONAT,    10, 16
 	dbwbb 10, PARAS,      10, 17
-	dbwbb  5, SCYTHER,    13, 14
-	dbwbb  5, PINSIR,     13, 14
+	dbwbb  5, VENONAT,    13, 14
+	dbwbb  5, PARAS,     13, 14
 	dbwbb -1, VENONAT,   30, 40

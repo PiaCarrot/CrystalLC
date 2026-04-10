@@ -94,16 +94,16 @@ KantoGrassWildMons:
 	dbw 16, ONIX
 	dbw 12, ZUBAT
 	dbw 15, CUBONE
-	dbw 15, KANGASKHAN
-	dbw 15, KANGASKHAN
+	dbw 15, CUBONE
+	dbw 15, CUBONE
 	; day
 	dbw 12, CUBONE
 	dbw 14, GEODUDE
 	dbw 16, ONIX
 	dbw 12, ZUBAT
 	dbw 15, CUBONE
-	dbw 15, KANGASKHAN
-	dbw 15, KANGASKHAN
+	dbw 15, CUBONE
+	dbw 15, CUBONE
 	; nite
 	dbw 12, ZUBAT
 	dbw 14, GEODUDE
@@ -358,7 +358,7 @@ KantoGrassWildMons:
 	dbw 16, ABRA
 	; nite
 	dbw 17, MEOWTH
-	dbw 17, MURKROW
+	dbw 17, HOOTHOOT
 	dbw 18, HOUNDOUR
 	dbw 18, MEOWTH
 	dbw 18, IGGLYBUFF
@@ -584,8 +584,8 @@ KantoGrassWildMons:
 	dbw 26, GRIMER
 	dbw 27, GRIMER
 	dbw 28, GRIMER
-	dbw 29, MURKROW
-	dbw 29, MURKROW
+	dbw 29, HOOTHOOT
+	dbw 29, HOOTHOOT
 	dbw 30, GRIMER
 	dbw 30, GRIMER
 	end_grass_wildmons
@@ -649,29 +649,29 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_21
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 30, TANGELA
+	dbw 30, BELLSPROUT
 	dbw 25, RATTATA
-	dbw 35, TANGELA
+	dbw 35, BELLSPROUT
 	dbw 20, RATTATA
 	dbw 30, MR__MIME
 	dbw 28, MR__MIME
 	dbw 28, MR__MIME
 	; day
-	dbw 30, TANGELA
+	dbw 30, BELLSPROUT
 	dbw 25, RATTATA
-	dbw 35, TANGELA
+	dbw 35, BELLSPROUT
 	dbw 20, RATTATA
 	dbw 28, MR__MIME
 	dbw 30, MR__MIME
 	dbw 30, MR__MIME
 	; nite
-	dbw 30, TANGELA
+	dbw 30, BELLSPROUT
 	dbw 25, RATTATA
-	dbw 35, TANGELA
+	dbw 35, BELLSPROUT
 	dbw 20, RATTATA
-	dbw 30, TANGELA
-	dbw 28, TANGELA
-	dbw 28, TANGELA
+	dbw 30, BELLSPROUT
+	dbw 28, BELLSPROUT
+	dbw 28, BELLSPROUT
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_22
@@ -817,7 +817,7 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 39, TANGELA
+	dbw 39, BELLSPROUT
 	dbw 40, PONYTA
 	dbw 40, PONYTA
 	dbw 42, EKANS
@@ -825,7 +825,7 @@ KantoGrassWildMons:
 	dbw 43, DODUO
 	dbw 43, DODUO
 	; day
-	dbw 39, TANGELA
+	dbw 39, BELLSPROUT
 	dbw 40, PONYTA
 	dbw 40, PONYTA
 	dbw 42, EKANS
@@ -833,7 +833,7 @@ KantoGrassWildMons:
 	dbw 43, DODUO
 	dbw 43, DODUO
 	; nite
-	dbw 39, TANGELA
+	dbw 39, BELLSPROUT
 	dbw 40, POLIWAG
 	dbw 40, ZUBAT
 	dbw 40, POLIWAG
