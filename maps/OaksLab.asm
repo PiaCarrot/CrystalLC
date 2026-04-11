@@ -3,6 +3,7 @@
 	const OAKSLAB_SCIENTIST1
 	const OAKSLAB_SCIENTIST2
 	const OAKSLAB_SCIENTIST3
+	const OAKSLAB_SCIENTIST4
 
 OaksLab_MapScripts:
 	def_scene_scripts
@@ -58,6 +59,74 @@ OaksAssistant2Script:
 
 OaksAssistant3Script:
 	jumptextfaceplayer OaksAssistant3Text
+
+OaksLabFossilScientistScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_FOSSIL_POKEMON_FROM_OAKS_LAB
+	iftrue .AfterGift
+	writetext OaksLabFossilScientistIntroText
+	promptbutton
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	writetext OaksLabFossilScientistChooseText
+	loadmenu .FossilMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .Kabuto
+	ifequal 2, .Omanyte
+	sjump .Declined
+
+.Kabuto:
+	writetext OaksLabFossilScientistKabutoText
+	promptbutton
+	givepoke KABUTO, 20
+	setevent EVENT_GOT_FOSSIL_POKEMON_FROM_OAKS_LAB
+	sjump .Received
+
+.Omanyte:
+	writetext OaksLabFossilScientistOmanyteText
+	promptbutton
+	givepoke OMANYTE, 20
+	setevent EVENT_GOT_FOSSIL_POKEMON_FROM_OAKS_LAB
+	sjump .Received
+
+.Received:
+	writetext OaksLabFossilScientistAfterGiftText
+	waitbutton
+	closetext
+	end
+
+.NoRoom:
+	writetext OaksLabFossilScientistNoRoomText
+	waitbutton
+	closetext
+	end
+
+.Declined:
+	writetext OaksLabFossilScientistDeclinedText
+	waitbutton
+	closetext
+	end
+
+.AfterGift:
+	writetext OaksLabFossilScientistAfterGiftText
+	waitbutton
+	closetext
+	end
+
+.FossilMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 11, 6
+	dw .FossilMenuData
+	db 1 ; default option
+
+.FossilMenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "KABUTO@"
+	db "OMANYTE@"
+	db "CANCEL@"
 
 OaksLabBookshelf:
 	jumpstd DifficultBookshelfScript
@@ -207,6 +276,50 @@ OaksAssistant3Text:
 	line "a live broadcast."
 	done
 
+OaksLabFossilScientistIntroText:
+	text "I worked at the"
+	line "CINNABAR LAB."
+
+	para "When the volcano"
+	line "erupted, I escaped"
+	cont "with two specimens."
+	done
+
+OaksLabFossilScientistChooseText:
+	text "I can trust you"
+	line "with one."
+
+	para "Which #MON do"
+	line "you want?"
+	done
+
+OaksLabFossilScientistKabutoText:
+	text "Then KABUTO is"
+	line "yours."
+	done
+
+OaksLabFossilScientistOmanyteText:
+	text "Then OMANYTE is"
+	line "yours."
+	done
+
+OaksLabFossilScientistAfterGiftText:
+	text "Take good care of"
+	line "that rare #MON."
+	done
+
+OaksLabFossilScientistNoRoomText:
+	text "Your party is full."
+	line "Come back with"
+	cont "space."
+	done
+
+OaksLabFossilScientistDeclinedText:
+	text "No rush."
+	line "Choose when you're"
+	cont "ready."
+	done
+
 OaksLabPoster1Text:
 	text "Press START to"
 	line "open the MENU."
@@ -283,3 +396,4 @@ OaksLab_MapEvents:
 	object_event  1,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant1Script, -1
 	object_event  8,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant2Script, -1
 	object_event  1,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant3Script, -1
+	object_event  7,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OaksLabFossilScientistScript, -1
