@@ -82,9 +82,9 @@ RedGyarados:
 	opentext
 	writetext LakeOfRageGyaradosCryText
 	pause 15
-	cry GYARADOS
+	cry MAGIKARP
 	closetext
-	loadwildmon GYARADOS, 30
+	loadwildmon MAGIKARP, 30
 	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCESHINY
 	startbattle
 	ifequal LOSE, .NotBeaten
@@ -244,12 +244,8 @@ LakeOfRageLanceTeleportIntoSkyMovement:
 
 LakeOfRageLanceForcedToEvolveText:
 	text "This lake is full"
-	line "of GYARADOS but"
+	line "of MAGIKARP but"
 	cont "nothing else…"
-
-	para "So the MAGIKARP"
-	line "are being forced"
-	cont "to evolve…"
 	done
 
 LakeOfRageLanceIntroText:
@@ -286,8 +282,8 @@ LakeOfRageLanceRadioSignalText:
 	para "It seems that the"
 	line "LAKE's MAGIKARP"
 
-	para "are being forced"
-	line "to evolve."
+	para "are flopping"
+	line "about."
 
 	para "A mysterious radio"
 	line "broadcast coming"
@@ -311,17 +307,17 @@ LakeOfRageLanceAskHelpText:
 	done
 
 LakeOfRageGyaradosCryText:
-	text "GYARADOS: Gyashaa!"
+	text "MAGIKARP: Carp!"
 	done
 
 LakeOfRageGotRedScaleText:
 	text "<PLAYER> obtained a"
-	line "RED SCALE."
+	line "GOLD SCALE."
 	done
 
 LakeOfRageGrampsText:
-	text "The GYARADOS are"
-	line "angry!"
+	text "The MAGIKARP are"
+	line "zany!"
 
 	para "It's a bad omen!"
 	done
@@ -347,12 +343,12 @@ LakeOfRageCooltrainerFText:
 	text "Did my eyes de-"
 	line "ceive me? I saw a"
 
-	para "red GYARADOS in"
+	para "gold MAGIKARP in"
 	line "the LAKE…"
 
 	para "But I thought"
-	line "GYARADOS were"
-	cont "usually blue?"
+	line "MAGIKARP were"
+	cont "usually red?"
 	done
 
 FisherAndreSeenText:
@@ -419,7 +415,7 @@ CooltrainermAaronAfterBattleText:
 
 CooltrainerfLoisSeenText:
 	text "What happened to"
-	line "the red GYARADOS?"
+	line "the gold MAGIKARP?"
 
 	para "It's gone?"
 
@@ -437,7 +433,7 @@ CooltrainerfLoisBeatenText:
 CooltrainerfLoisAfterBattleText:
 	text "Come to think of"
 	line "it, I've seen a"
-	cont "pink BUTTERFREE."
+	cont "yellow CATERPIE."
 	done
 
 MeetWesleyText:
@@ -483,7 +479,7 @@ WesleyNotWednesdayText:
 LakeOfRageSignText:
 	text "LAKE OF RAGE,"
 	line "also known as"
-	cont "GYARADOS LAKE."
+	cont "MAGIKARP LAKE."
 	done
 
 FishingGurusHouseSignText:

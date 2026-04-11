@@ -487,7 +487,7 @@ KantoGrassWildMons:
 	dbw 25, HOPPIP
 	dbw 27, HOPPIP
 	dbw 27, HOPPIP
-	dbw 25, CHANSEY
+	dbw 25, HOPPIP
 	; day
 	dbw 23, NIDORAN_M
 	dbw 23, NIDORAN_F
@@ -495,7 +495,7 @@ KantoGrassWildMons:
 	dbw 25, HOPPIP
 	dbw 27, HOPPIP
 	dbw 27, HOPPIP
-	dbw 25, CHANSEY
+	dbw 25, HOPPIP
 	; nite
 	dbw 23, VENONAT
 	dbw 23, WOOPER
@@ -503,7 +503,7 @@ KantoGrassWildMons:
 	dbw 25, VENONAT
 	dbw 25, WOOPER
 	dbw 25, WOOPER
-	dbw 25, CHANSEY
+	dbw 25, WOOPER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_14
@@ -515,7 +515,7 @@ KantoGrassWildMons:
 	dbw 28, HOPPIP
 	dbw 30, HOPPIP
 	dbw 30, HOPPIP
-	dbw 28, CHANSEY
+	dbw 28, HOPPIP
 	; day
 	dbw 26, NIDORAN_M
 	dbw 26, NIDORAN_F
@@ -523,7 +523,7 @@ KantoGrassWildMons:
 	dbw 28, HOPPIP
 	dbw 30, HOPPIP
 	dbw 30, HOPPIP
-	dbw 28, CHANSEY
+	dbw 28, HOPPIP
 	; nite
 	dbw 26, VENONAT
 	dbw 26, WOOPER
@@ -531,7 +531,7 @@ KantoGrassWildMons:
 	dbw 28, VENONAT
 	dbw 28, WOOPER
 	dbw 28, WOOPER
-	dbw 28, CHANSEY
+	dbw 28, WOOPER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_15
@@ -543,7 +543,7 @@ KantoGrassWildMons:
 	dbw 25, HOPPIP
 	dbw 27, HOPPIP
 	dbw 27, HOPPIP
-	dbw 25, CHANSEY
+	dbw 25, HOPPIP
 	; day
 	dbw 23, NIDORAN_M
 	dbw 23, NIDORAN_F
@@ -551,7 +551,7 @@ KantoGrassWildMons:
 	dbw 25, HOPPIP
 	dbw 27, HOPPIP
 	dbw 27, HOPPIP
-	dbw 25, CHANSEY
+	dbw 25, HOPPIP
 	; nite
 	dbw 23, VENONAT
 	dbw 23, WOOPER
@@ -559,7 +559,7 @@ KantoGrassWildMons:
 	dbw 25, VENONAT
 	dbw 25, WOOPER
 	dbw 25, WOOPER
-	dbw 25, CHANSEY
+	dbw 25, WOOPER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_16
@@ -653,17 +653,17 @@ KantoGrassWildMons:
 	dbw 25, RATTATA
 	dbw 35, BELLSPROUT
 	dbw 20, RATTATA
-	dbw 30, MR__MIME
-	dbw 28, MR__MIME
-	dbw 28, MR__MIME
+	dbw 30, BELLSPROUT
+	dbw 28, BELLSPROUT
+	dbw 28, BELLSPROUT
 	; day
 	dbw 30, BELLSPROUT
 	dbw 25, RATTATA
 	dbw 35, BELLSPROUT
 	dbw 20, RATTATA
-	dbw 28, MR__MIME
-	dbw 30, MR__MIME
-	dbw 30, MR__MIME
+	dbw 28, BELLSPROUT
+	dbw 30, BELLSPROUT
+	dbw 30, BELLSPROUT
 	; nite
 	dbw 30, BELLSPROUT
 	dbw 25, RATTATA

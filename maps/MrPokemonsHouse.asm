@@ -92,7 +92,6 @@ MrPokemonsHouse_OakScript:
 	writetext MrPokemonsHouse_GetDexText
 	playsound SFX_ITEM
 	waitsfx
-	setflag ENGINE_POKEDEX
 	writetext MrPokemonsHouse_OakText2
 	waitbutton
 	closetext
@@ -289,18 +288,20 @@ MrPokemonsHouse_OakText1:
 	para "How would you like"
 	line "to help me out?"
 
-	para "See? This is the"
-	line "latest version of"
-	cont "#DEX."
+	para "The kids these"
+	line "days refuse to"
+	cont "evolve #MON!"
+	cont "Something about"
+	cont "cute is in and"
+	cont "cool is out..."
 
-	para "It automatically"
-	line "records data on"
-
-	para "#MON you've"
-	line "seen or caught."
-
-	para "It's a hi-tech"
-	line "encyclopedia!"
+	para "I want you to"
+	line "beat the LITTLE"
+	cont "LEAGUE at their"
+	cont "own game, and"
+	cont "convince everyone"
+	cont "that evolution is"
+	cont "important!"
 	done
 
 MrPokemonsHouse_GetDexText:
@@ -312,8 +313,8 @@ MrPokemonsHouse_OakText2:
 	text "Go meet many kinds"
 	line "of #MON and"
 
-	para "complete that"
-	line "#DEX!"
+	para "beat the LITTLE"
+	line "LEAGUE!"
 
 	para "But I've stayed"
 	line "too long."
@@ -329,7 +330,7 @@ MrPokemonsHouse_OakText2:
 MrPokemonText_GimmeTheScale:
 	text "Hm? That SCALE!"
 	line "What's that?"
-	cont "A red GYARADOS?"
+	cont "A gold MAGIKARP?"
 
 	para "That's rare!"
 	line "I, I want it…"
@@ -338,7 +339,7 @@ MrPokemonText_GimmeTheScale:
 	line "care to trade it?"
 
 	para "I can offer this"
-	line "EXP.SHARE I got"
+	line "TM that I got"
 	cont "from PROF.OAK."
 	done
 

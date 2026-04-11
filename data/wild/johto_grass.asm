@@ -394,34 +394,6 @@ JohtoGrassWildMons:
 	dbw 22, WOOPER
 	end_grass_wildmons
 
-	def_grass_wildmons RUINS_OF_ALPH_INNER_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	; day
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	; nite
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	dbw 5, UNOWN
-	end_grass_wildmons
-
 	def_grass_wildmons UNION_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
@@ -430,7 +402,7 @@ JohtoGrassWildMons:
 	dbw 5, ZUBAT
 	dbw 4, RATTATA
 	dbw 7, ZUBAT
-	dbw 6, ONIX
+	dbw 6, MAGBY
 	dbw 6, ONIX
 	; day
 	dbw 6, GEODUDE
@@ -438,7 +410,7 @@ JohtoGrassWildMons:
 	dbw 5, ZUBAT
 	dbw 4, RATTATA
 	dbw 7, ZUBAT
-	dbw 6, ONIX
+	dbw 6, MAGBY
 	dbw 6, ONIX
 	; nite
 	dbw 6, GEODUDE
@@ -446,7 +418,7 @@ JohtoGrassWildMons:
 	dbw 5, WOOPER
 	dbw 4, RATTATA
 	dbw 7, ZUBAT
-	dbw 6, ONIX
+	dbw 6, MAGBY
 	dbw 6, ONIX
 	end_grass_wildmons
 
@@ -458,24 +430,24 @@ JohtoGrassWildMons:
 	dbw 8, ZUBAT
 	dbw 8, ONIX
 	dbw 6, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
+	dbw 8, MAGBY
+	dbw 8, MAGBY
 	; day
 	dbw 8, GEODUDE
 	dbw 6, ZUBAT
 	dbw 8, ZUBAT
 	dbw 8, ONIX
 	dbw 6, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
+	dbw 8, MAGBY
+	dbw 8, MAGBY
 	; nite
 	dbw 8, GEODUDE
 	dbw 6, ZUBAT
 	dbw 8, WOOPER
 	dbw 8, ONIX
 	dbw 6, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
+	dbw 8, MAGBY
+	dbw 8, MAGBY
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B2F
@@ -483,7 +455,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw 22, ZUBAT
 	dbw 22, ZUBAT
-	dbw 22, ZUBAT
+	dbw 22, MAGBY
 	dbw 21, RATTATA
 	dbw 20, GEODUDE
 	dbw 23, ONIX
@@ -491,7 +463,7 @@ JohtoGrassWildMons:
 	; day
 	dbw 22, ZUBAT
 	dbw 22, ZUBAT
-	dbw 22, ZUBAT
+	dbw 22, MAGBY
 	dbw 21, RATTATA
 	dbw 20, GEODUDE
 	dbw 23, ONIX
@@ -571,7 +543,7 @@ JohtoGrassWildMons:
 	dbw 7, WEEDLE
 	dbw 7, PIDGEY
 	dbw 6, PARAS
-	dbw 6, PARAS
+	dbw 6, CLEFFA
 	; day
 	dbw 5, CATERPIE
 	dbw 5, WEEDLE
@@ -579,7 +551,7 @@ JohtoGrassWildMons:
 	dbw 7, WEEDLE
 	dbw 7, PIDGEY
 	dbw 6, PARAS
-	dbw 6, PARAS
+	dbw 6, CLEFFA
 	; nite
 	dbw 5, ODDISH
 	dbw 5, VENONAT
@@ -587,7 +559,7 @@ JohtoGrassWildMons:
 	dbw 7, PSYDUCK
 	dbw 7, HOOTHOOT
 	dbw 6, PARAS
-	dbw 6, PARAS
+	dbw 6, CLEFFA
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
@@ -626,24 +598,24 @@ JohtoGrassWildMons:
 	dbw 15, MACHOP
 	dbw 14, RATTATA
 	dbw 15, ZUBAT
-	dbw 15, ZUBAT
-	dbw 15, ZUBAT
+	dbw 15, CUBONE
+	dbw 15, SLUGMA
 	; day
 	dbw 13, GEODUDE
 	dbw 14, RATTATA
 	dbw 15, MACHOP
 	dbw 14, RATTATA
 	dbw 15, ZUBAT
-	dbw 15, ZUBAT
-	dbw 15, ZUBAT
+	dbw 15, CUBONE
+	dbw 15, SLUGMA
 	; nite
 	dbw 13, GEODUDE
 	dbw 14, RATTATA
 	dbw 15, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, MARILL
-	dbw 15, ZUBAT
-	dbw 15, ZUBAT
+	dbw 15, CUBONE
+	dbw 15, SLUGMA
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_2F_INSIDE
@@ -655,7 +627,7 @@ JohtoGrassWildMons:
 	dbw 30, RATTATA
 	dbw 28, MACHOP
 	dbw 30, ZUBAT
-	dbw 30, ZUBAT
+	dbw 30, SLUGMA
 	; day
 	dbw 31, GEODUDE
 	dbw 32, MACHOP
@@ -663,7 +635,7 @@ JohtoGrassWildMons:
 	dbw 30, RATTATA
 	dbw 28, MACHOP
 	dbw 30, ZUBAT
-	dbw 30, ZUBAT
+	dbw 30, SLUGMA
 	; nite
 	dbw 31, GEODUDE
 	dbw 31, GEODUDE
@@ -671,7 +643,7 @@ JohtoGrassWildMons:
 	dbw 30, ZUBAT
 	dbw 28, MARILL
 	dbw 32, ZUBAT
-	dbw 32, ZUBAT
+	dbw 32, SLUGMA
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_B1F
@@ -1075,7 +1047,7 @@ JohtoGrassWildMons:
 	dbw 45, MAGBY
 	dbw 45, ZUBAT
 	dbw 20, LARVITAR
-	dbw 15, LARVITAR
+	dbw 15, CHANSEY
 	; day
 	dbw 43, GEODUDE
 	dbw 44, TEDDIURSA
@@ -1083,7 +1055,7 @@ JohtoGrassWildMons:
 	dbw 45, MAGBY
 	dbw 45, ZUBAT
 	dbw 20, LARVITAR
-	dbw 15, LARVITAR
+	dbw 15, CHANSEY
 	; nite
 	dbw 43, GEODUDE
 	dbw 44, ZUBAT
@@ -1091,7 +1063,7 @@ JohtoGrassWildMons:
 	dbw 42, ZUBAT
 	dbw 45, PSYDUCK
 	dbw 46, ZUBAT
-	dbw 46, ZUBAT
+	dbw 46, CHANSEY
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_2
@@ -1103,7 +1075,7 @@ JohtoGrassWildMons:
 	dbw 46, PARAS
 	dbw 48, PARAS
 	dbw 15, LARVITAR
-	dbw 20, LARVITAR
+	dbw 20, CHANSEY
 	; day
 	dbw 48, ZUBAT
 	dbw 48, MACHOP
@@ -1111,7 +1083,7 @@ JohtoGrassWildMons:
 	dbw 46, PARAS
 	dbw 48, PARAS
 	dbw 15, LARVITAR
-	dbw 20, LARVITAR
+	dbw 20, CHANSEY
 	; nite
 	dbw 48, ZUBAT
 	dbw 48, PSYDUCK
@@ -1119,7 +1091,7 @@ JohtoGrassWildMons:
 	dbw 46, PARAS
 	dbw 48, PARAS
 	dbw 45, ZUBAT
-	dbw 45, ZUBAT
+	dbw 45, CHANSEY
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_3
@@ -1131,7 +1103,7 @@ JohtoGrassWildMons:
 	dbw 50, TEDDIURSA
 	dbw 20, LARVITAR
 	dbw 15, LARVITAR
-	dbw 20, LARVITAR
+	dbw 20, CHANSEY
 	; day
 	dbw 51, ZUBAT
 	dbw 48, ONIX
@@ -1139,7 +1111,7 @@ JohtoGrassWildMons:
 	dbw 50, TEDDIURSA
 	dbw 20, LARVITAR
 	dbw 15, LARVITAR
-	dbw 20, LARVITAR
+	dbw 20, CHANSEY
 	; nite
 	dbw 51, ZUBAT
 	dbw 48, ONIX
@@ -1147,7 +1119,7 @@ JohtoGrassWildMons:
 	dbw 49, ZUBAT
 	dbw 45, PSYDUCK
 	dbw 53, ZUBAT
-	dbw 53, ZUBAT
+	dbw 53, CHANSEY
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ITEM_ROOMS
@@ -1159,7 +1131,7 @@ JohtoGrassWildMons:
 	dbw 46, PARAS
 	dbw 48, PARAS
 	dbw 50, PARAS
-	dbw 52, PARAS
+	dbw 52, CHANSEY
 	; day
 	dbw 48, ZUBAT
 	dbw 46, ZUBAT
@@ -1167,7 +1139,7 @@ JohtoGrassWildMons:
 	dbw 46, PARAS
 	dbw 48, PARAS
 	dbw 50, PARAS
-	dbw 52, PARAS
+	dbw 52, CHANSEY
 	; nite
 	dbw 45, ZUBAT
 	dbw 48, ZUBAT
@@ -1175,7 +1147,7 @@ JohtoGrassWildMons:
 	dbw 46, PARAS
 	dbw 48, PARAS
 	dbw 50, PARAS
-	dbw 52, PARAS
+	dbw 52, CHANSEY
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -1193,7 +1165,7 @@ JohtoGrassWildMons:
 	dbw 2, ZUBAT
 	dbw 2, GEODUDE
 	dbw 4, GEODUDE
-	dbw 2, ZUBAT
+	dbw 2, TEDDIURSA
 	dbw 4, ZUBAT
 	dbw 4, GEODUDE
 	; nite
@@ -1201,7 +1173,7 @@ JohtoGrassWildMons:
 	dbw 2, ZUBAT
 	dbw 2, GEODUDE
 	dbw 4, GEODUDE
-	dbw 2, ZUBAT
+	dbw 2, TEDDIURSA
 	dbw 4, ZUBAT
 	dbw 4, GEODUDE
 	end_grass_wildmons
@@ -1214,7 +1186,7 @@ JohtoGrassWildMons:
 	dbw 25, GEODUDE
 	dbw 25, TEDDIURSA
 	dbw 20, TEDDIURSA
-	dbw 23, ZUBAT
+	dbw 23, HOUNDOUR
 	dbw 23, ZUBAT
 	; day
 	dbw 23, GEODUDE
@@ -1222,15 +1194,15 @@ JohtoGrassWildMons:
 	dbw 25, GEODUDE
 	dbw 25, TEDDIURSA
 	dbw 30, TEDDIURSA
-	dbw 23, ZUBAT
+	dbw 23, HOUNDOUR
 	dbw 23, ZUBAT
 	; nite
 	dbw 23, GEODUDE
 	dbw 23, ZUBAT
 	dbw 25, GEODUDE
-	dbw 20, WOBBUFFET
-	dbw 25, WOBBUFFET
-	dbw 23, ZUBAT
+	dbw 20, TEDDIURSA
+	dbw 25, TEDDIURSA
+	dbw 23, HOUNDOUR
 	dbw 23, ZUBAT
 	end_grass_wildmons
 
@@ -1326,7 +1298,7 @@ JohtoGrassWildMons:
 	dbw 7, BELLSPROUT
 	dbw 6, HOPPIP
 	dbw 7, PIDGEY
-	dbw 7, HOPPIP
+	dbw 7, MAREEP
 	dbw 7, HOPPIP
 	; day
 	dbw 4, EKANS
@@ -1334,7 +1306,7 @@ JohtoGrassWildMons:
 	dbw 7, BELLSPROUT
 	dbw 6, HOPPIP
 	dbw 7, PIDGEY
-	dbw 7, HOPPIP
+	dbw 7, MAREEP
 	dbw 7, HOPPIP
 	; nite
 	dbw 4, WOOPER
@@ -1342,7 +1314,7 @@ JohtoGrassWildMons:
 	dbw 7, BELLSPROUT
 	dbw 6, ZUBAT
 	dbw 7, HOOTHOOT
-	dbw 7, GASTLY
+	dbw 7, MAREEP
 	dbw 7, GASTLY
 	end_grass_wildmons
 
@@ -1352,7 +1324,7 @@ JohtoGrassWildMons:
 	dbw 6, RATTATA
 	dbw 6, SPEAROW
 	dbw 6, GEODUDE
-	dbw 6, HOPPIP
+	dbw 6, PICHU
 	dbw 7, EKANS
 	dbw 7, HOPPIP
 	dbw 7, HOPPIP
@@ -1360,7 +1332,7 @@ JohtoGrassWildMons:
 	dbw 6, RATTATA
 	dbw 6, SPEAROW
 	dbw 6, GEODUDE
-	dbw 6, HOPPIP
+	dbw 6, PICHU
 	dbw 7, EKANS
 	dbw 7, HOPPIP
 	dbw 7, HOPPIP
@@ -1369,7 +1341,7 @@ JohtoGrassWildMons:
 	dbw 6, ZUBAT
 	dbw 6, GEODUDE
 	dbw 6, ZUBAT
-	dbw 7, RATTATA
+	dbw 7, PICHU
 	dbw 7, RATTATA
 	dbw 7, RATTATA
 	end_grass_wildmons
@@ -1382,7 +1354,7 @@ JohtoGrassWildMons:
 	dbw 12, PIDGEY
 	dbw 10, ABRA
 	dbw 12, IGGLYBUFF
-	dbw 10, SNUBBULL
+	dbw 10, TYROGUE
 	dbw 10, SNUBBULL
 	; day
 	dbw 10, SNUBBULL
@@ -1390,7 +1362,7 @@ JohtoGrassWildMons:
 	dbw 12, PIDGEY
 	dbw 10, ABRA
 	dbw 12, IGGLYBUFF
-	dbw 10, SNUBBULL
+	dbw 10, TYROGUE
 	dbw 10, SNUBBULL
 	; nite
 	dbw 12, DROWZEE
@@ -1398,7 +1370,7 @@ JohtoGrassWildMons:
 	dbw 12, HOOTHOOT
 	dbw 10, ABRA
 	dbw 12, IGGLYBUFF
-	dbw 10, SNUBBULL
+	dbw 10, TYROGUE
 	dbw 10, SNUBBULL
 	end_grass_wildmons
 
@@ -1411,7 +1383,7 @@ JohtoGrassWildMons:
 	dbw 10, ABRA
 	dbw 12, IGGLYBUFF
 	dbw 10, SNUBBULL
-	dbw 12, PIDGEY
+	dbw 12, GRIMER
 	; day
 	dbw 12, SNUBBULL
 	dbw 14, PIDGEY
@@ -1419,7 +1391,7 @@ JohtoGrassWildMons:
 	dbw 10, ABRA
 	dbw 12, IGGLYBUFF
 	dbw 10, SNUBBULL
-	dbw 12, PIDGEY
+	dbw 12, GRIMER
 	; nite
 	dbw 12, DROWZEE
 	dbw 14, HOOTHOOT
@@ -1427,7 +1399,7 @@ JohtoGrassWildMons:
 	dbw 10, ABRA
 	dbw 12, IGGLYBUFF
 	dbw 10, SNUBBULL
-	dbw 12, PIDGEY
+	dbw 12, GRIMER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_36
@@ -1437,24 +1409,24 @@ JohtoGrassWildMons:
 	dbw 4, PIDGEY
 	dbw 5, BELLSPROUT
 	dbw 5, GROWLITHE
-	dbw 5, PIDGEY
-	dbw 6, PIDGEY
+	dbw 5, VULPIX
+	dbw 6, ELEKID
 	dbw 6, PIDGEY
 	; day
 	dbw 4, PIDGEY
 	dbw 4, PIDGEY
 	dbw 5, BELLSPROUT
 	dbw 5, GROWLITHE
-	dbw 5, PIDGEY
-	dbw 6, PIDGEY
+	dbw 5, VULPIX
+	dbw 6, ELEKID
 	dbw 6, PIDGEY
 	; nite
 	dbw 4, SPINARAK
 	dbw 4, HOOTHOOT
 	dbw 5, BELLSPROUT
 	dbw 5, HOOTHOOT
-	dbw 5, HOOTHOOT
-	dbw 5, GASTLY
+	dbw 5, VULPIX
+	dbw 5, ELEKID
 	dbw 5, GASTLY
 	end_grass_wildmons
 
@@ -1465,7 +1437,7 @@ JohtoGrassWildMons:
 	dbw 14, GROWLITHE
 	dbw 15, PIDGEY
 	dbw 16, GROWLITHE
-	dbw 15, PIDGEY
+	dbw 15, VULPIX
 	dbw 15, LEDYBA
 	dbw 15, LEDYBA
 	; day
@@ -1473,7 +1445,7 @@ JohtoGrassWildMons:
 	dbw 14, GROWLITHE
 	dbw 15, PIDGEY
 	dbw 16, GROWLITHE
-	dbw 15, PIDGEY
+	dbw 15, VULPIX
 	dbw 15, PIDGEY
 	dbw 15, PIDGEY
 	; nite
@@ -1481,7 +1453,7 @@ JohtoGrassWildMons:
 	dbw 14, HOOTHOOT
 	dbw 15, HOOTHOOT
 	dbw 16, HOOTHOOT
-	dbw 15, HOOTHOOT
+	dbw 15, VULPIX
 	dbw 15, SPINARAK
 	dbw 15, SPINARAK
 	end_grass_wildmons
@@ -1493,7 +1465,7 @@ JohtoGrassWildMons:
 	dbw 16, RATTATA
 	dbw 16, MAGNEMITE
 	dbw 16, PIDGEY
-	dbw 13, MAGNEMITE
+	dbw 13, DIGLETT
 	dbw 13, MAGNEMITE
 	dbw 13, MAGNEMITE
 	; day
@@ -1501,7 +1473,7 @@ JohtoGrassWildMons:
 	dbw 16, RATTATA
 	dbw 16, MAGNEMITE
 	dbw 16, PIDGEY
-	dbw 13, MAGNEMITE
+	dbw 13, DIGLETT
 	dbw 13, MAGNEMITE
 	dbw 13, MAGNEMITE
 	; nite
@@ -1509,7 +1481,7 @@ JohtoGrassWildMons:
 	dbw 16, RATTATA
 	dbw 16, MAGNEMITE
 	dbw 16, HOOTHOOT
-	dbw 16, MEOWTH
+	dbw 16, DIGLETT
 	dbw 16, MEOWTH
 	dbw 16, MEOWTH
 	end_grass_wildmons
@@ -1550,24 +1522,24 @@ JohtoGrassWildMons:
 	dbw 15, RATTATA
 	dbw 16, RATTATA
 	dbw 15, EKANS
-	dbw 16, SPEAROW
-	dbw 16, SPEAROW
+	dbw 16, MANKEY
+	dbw 16, SQUIRTLE
 	; day
 	dbw 13, EKANS
 	dbw 14, SPEAROW
 	dbw 15, RATTATA
 	dbw 16, RATTATA
 	dbw 15, EKANS
-	dbw 16, SPEAROW
-	dbw 16, SPEAROW
+	dbw 16, MANKEY
+	dbw 16, SQUIRTLE
 	; nite
 	dbw 13, RATTATA
 	dbw 14, ZUBAT
 	dbw 15, RATTATA
 	dbw 16, ZUBAT
 	dbw 15, MARILL
-	dbw 16, ZUBAT
-	dbw 16, ZUBAT
+	dbw 16, MANKEY
+	dbw 16, SQUIRTLE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_43
@@ -1607,7 +1579,7 @@ JohtoGrassWildMons:
 	dbw 24, BELLSPROUT
 	dbw 24, BELLSPROUT
 	dbw 26, BELLSPROUT
-	dbw 26, BELLSPROUT
+	dbw 26, BULBASAUR
 	; day
 	dbw 23, BELLSPROUT
 	dbw 22, BELLSPROUT
@@ -1615,7 +1587,7 @@ JohtoGrassWildMons:
 	dbw 24, BELLSPROUT
 	dbw 24, BELLSPROUT
 	dbw 26, BELLSPROUT
-	dbw 26, BELLSPROUT
+	dbw 26, BULBASAUR
 	; nite
 	dbw 23, BELLSPROUT
 	dbw 22, POLIWAG
@@ -1623,7 +1595,7 @@ JohtoGrassWildMons:
 	dbw 24, BELLSPROUT
 	dbw 24, POLIWAG
 	dbw 26, POLIWAG
-	dbw 26, POLIWAG
+	dbw 26, BULBASAUR
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_45
@@ -1631,27 +1603,27 @@ JohtoGrassWildMons:
 	; morn
 	dbw 23, GEODUDE
 	dbw 23, GEODUDE
-	dbw 24, GEODUDE
-	dbw 25, PHANPY
+	dbw 24, RHYHORN
+	dbw 25, RHYHORN
 	dbw 20, PHANPY
 	dbw 27, PHANPY
-	dbw 27, PHANPY
+	dbw 27, CHARMANDER
 	; day
 	dbw 23, GEODUDE
 	dbw 23, GEODUDE
-	dbw 24, GEODUDE
-	dbw 25, PHANPY
+	dbw 24, RHYHORN
+	dbw 25, RHYHORN
 	dbw 30, PHANPY
 	dbw 27, PHANPY
-	dbw 27, PHANPY
+	dbw 27, CHARMANDER
 	; nite
 	dbw 23, GEODUDE
 	dbw 23, GEODUDE
-	dbw 24, GEODUDE
-	dbw 25, GEODUDE
+	dbw 24, RHYHORN
+	dbw 25, RHYHORN
 	dbw 27, GEODUDE
 	dbw 27, GEODUDE
-	dbw 27, GEODUDE
+	dbw 27, CHARMANDER
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_46
@@ -1662,23 +1634,23 @@ JohtoGrassWildMons:
 	dbw 3, GEODUDE
 	dbw 3, RATTATA
 	dbw 2, PHANPY
-	dbw 2, RATTATA
+	dbw 2, IGGLYBUFF
 	dbw 2, RATTATA
 	; day
 	dbw 2, GEODUDE
 	dbw 2, SPEAROW
 	dbw 3, GEODUDE
 	dbw 3, RATTATA
-	dbw 2, RATTATA
-	dbw 2, RATTATA
+	dbw 2, PHANPY
+	dbw 2, IGGLYBUFF
 	dbw 2, RATTATA
 	; nite
 	dbw 2, GEODUDE
 	dbw 2, RATTATA
 	dbw 3, GEODUDE
 	dbw 3, RATTATA
-	dbw 2, RATTATA
-	dbw 2, RATTATA
+	dbw 2, PHANPY
+	dbw 2, CLEFFA
 	dbw 2, RATTATA
 	end_grass_wildmons
 
@@ -1691,7 +1663,7 @@ JohtoGrassWildMons:
 	dbw 44, PONYTA
 	dbw 41, DODUO
 	dbw 43, DODUO
-	dbw 43, DODUO
+	dbw 43, SCYTHER
 	; day
 	dbw 41, BELLSPROUT
 	dbw 42, PONYTA
@@ -1699,7 +1671,7 @@ JohtoGrassWildMons:
 	dbw 44, PONYTA
 	dbw 41, DODUO
 	dbw 43, DODUO
-	dbw 43, DODUO
+	dbw 43, SCYTHER
 	; nite
 	dbw 41, BELLSPROUT
 	dbw 42, POLIWAG
@@ -1707,7 +1679,7 @@ JohtoGrassWildMons:
 	dbw 44, POLIWAG
 	dbw 40, ZUBAT
 	dbw 44, ZUBAT
-	dbw 44, ZUBAT
+	dbw 44, SCYTHER
 	end_grass_wildmons
 
 	db -1 ; end

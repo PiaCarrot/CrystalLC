@@ -996,23 +996,23 @@ ElmAfterTheftText5:
 	text "ELM: What?!?"
 
 if !DEF(_DEBUG)
-	para "PROF.OAK gave you"
-	line "a #DEX?"
+	para "PROF.OAK told you"
+	line "to do what?"
 
 	para "<PLAY_G>, is that"
 	line "true? Th-that's"
-	cont "incredible!"
+	cont "unorthodox!"
 
-	para "He is superb at"
-	line "seeing the poten-"
-	cont "tial of people as"
-	cont "trainers."
+	para "He must be very"
+	line "desperate to ask"
+	cont "you to do this."
 
-	para "Wow, <PLAY_G>. You"
+	para "<PLAY_G>. You may"
 	line "may have what it"
 
 	para "takes to become"
-	line "the CHAMPION."
+	line "the LITTLE CUP"
+	cont "CHAMPION."
 
 	para "You seem to be"
 	line "getting on great"
@@ -1116,19 +1116,10 @@ ElmGiveEverstoneText2:
 	text "That's an"
 	line "EVERSTONE."
 
-	para "Some species of"
-	line "#MON evolve"
-
-	para "when they grow to"
-	line "certain levels."
-
-	para "A #MON holding"
-	line "the EVERSTONE"
-	cont "won't evolve."
-
-	para "Give it to a #-"
-	line "MON you don't want"
-	cont "to evolve."
+	para "It does literally"
+	line "nothing!"
+	cont "Just thought you"
+	cont "might like it."
 	done
 
 ElmText_CallYou:
@@ -1182,6 +1173,11 @@ ElmGiveMasterBallText2:
 
 	para "use of it than I"
 	line "can, <PLAY_G>!"
+	
+	para "Oh, but if the"
+	line "#MON seems super"
+	cont "strong, I wouldn't"
+	cont "count on it."
 	done
 
 ElmGiveTicketText1:
@@ -1255,12 +1251,12 @@ AideText_GiveYouBalls:
 	text "<PLAY_G>!"
 
 	para "Use these on your"
-	line "#DEX quest!"
+	line "LITTLE CUP quest!"
 	done
 
 AideText_ExplainBalls:
 	text "To add to your"
-	line "#DEX, you have"
+	line "party, you have"
 	cont "to catch #MON."
 
 	para "Throw # BALLS"
@@ -1360,7 +1356,7 @@ ElmsLabTrashcanText:
 	done
 
 ElmsLabPCText:
-	text "OBSERVATIONS ON"
+	text "TRENDS ON"
 	line "#MON EVOLUTION"
 
 	para "…It says on the"

@@ -452,7 +452,7 @@ ElixerDesc:
 
 RedScaleDesc:
 	db   "A scale from the"
-	next "red GYARADOS.@"
+	next "gold MAGIKARP.@"
 
 SecretPotionDesc:
 	db   "Fully heals any"

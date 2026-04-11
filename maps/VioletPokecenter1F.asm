@@ -33,6 +33,7 @@ VioletPokecenter1F_ElmsAideScript:
 	setmapscene ROUTE_32, SCENE_ROUTE32_OFFER_SLOWPOKETAIL
 	writetext VioletPokecenterElmsAideGiveEggText
 	waitbutton
+	verbosegiveitem INCUBATOR
 	closetext
 	readvar VAR_FACING
 	ifequal UP, .AideWalksAroundPlayer
@@ -135,6 +136,11 @@ VioletPokecenterElmsAideGiveEggText:
 	para "Please call PROF."
 	line "ELM when that EGG"
 	cont "hatches!"
+	
+	para "Oh, yes! Take this"
+	line "as well! It will"
+	cont "speed up the EGG"
+	cont "hatching process!"
 	done
 
 VioletCityElmsAideFullPartyText:
