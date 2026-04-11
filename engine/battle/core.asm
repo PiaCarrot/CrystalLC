@@ -2550,7 +2550,14 @@ AwardBattleLP:
 	jr .add
 
 .wild
+	ld a, [wEnemyMonCatchRate]
+	cp 3
+	jr z, .legendary_wild
 	ld de, 50
+	jr .add
+
+.legendary_wild
+	ld de, 30000
 	jr .add
 
 .rival

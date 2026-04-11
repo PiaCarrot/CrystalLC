@@ -235,6 +235,10 @@ PokeBallEffect:
 	dec a
 	jmp nz, UseBallInTrainerBattle
 
+	ld a, [wEnemyMonCatchRate]
+	cp 3
+	jmp z, UseBallInTrainerBattle
+
 	ld a, [wBattleType]
 	cp BATTLETYPE_TUTORIAL
 	jr z, .room_in_party
