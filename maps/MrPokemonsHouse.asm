@@ -69,7 +69,7 @@ MrPokemonsHouse_MrPokemonScript:
 	writetext MrPokemonText_GimmeTheScale
 	yesorno
 	iffalse .refused
-	verbosegiveitem EXP_SHARE
+	verbosegiveitem TM_PSYCH_UP
 	iffalse .full
 	takeitem RED_SCALE
 	sjump .AlwaysNewDiscoveries
@@ -87,11 +87,7 @@ MrPokemonsHouse_OakScript:
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext MrPokemonsHouse_OakText1
-	promptbutton
-	waitsfx
-	writetext MrPokemonsHouse_GetDexText
-	playsound SFX_ITEM
-	waitsfx
+	waitbutton
 	writetext MrPokemonsHouse_OakText2
 	waitbutton
 	closetext
@@ -297,16 +293,11 @@ MrPokemonsHouse_OakText1:
 
 	para "I want you to"
 	line "beat the LITTLE"
-	cont "LEAGUE at their"
+	cont "CUP at their"
 	cont "own game, and"
 	cont "convince everyone"
 	cont "that evolution is"
 	cont "important!"
-	done
-
-MrPokemonsHouse_GetDexText:
-	text "<PLAYER> received"
-	line "#DEX!"
 	done
 
 MrPokemonsHouse_OakText2:
@@ -314,7 +305,7 @@ MrPokemonsHouse_OakText2:
 	line "of #MON and"
 
 	para "beat the LITTLE"
-	line "LEAGUE!"
+	line "CUP!"
 
 	para "But I've stayed"
 	line "too long."
