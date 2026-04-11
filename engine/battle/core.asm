@@ -3941,7 +3941,6 @@ InitEnemyMon:
 	ld a, [hli]
 	ld [de], a
 	inc de
-	ld a, [hl]
 	ld [de], a
 	; The enemy mon's base Sp. Def isn't needed since its base
 	; Sp. Atk is also used to calculate Sp. Def stat experience.
@@ -4609,7 +4608,6 @@ PrintPlayerHUD:
 	ld a, [hli]
 	ld [de], a
 	inc de
-	ld a, [hl]
 	ld [de], a
 	ld hl, wBattleMonLevel
 	ld de, wTempMonLevel
@@ -4695,7 +4693,6 @@ DrawEnemyHUD:
 	ld a, [hli]
 	ld [de], a
 	inc de
-	ld a, [hl]
 	ld [de], a
 
 	ld a, TEMPMON
@@ -6017,7 +6014,6 @@ LoadEnemyMon:
 	ld a, [hli]
 	ld [de], a
 	inc de
-	ld a, [hl]
 	ld [de], a
 	jmp .Happiness
 
@@ -6297,7 +6293,6 @@ LoadEnemyMon:
 	ld a, [hli]
 	ld [de], a
 	inc de
-	ld a, [hl]
 	ld [de], a
 
 ; Get moves
@@ -6461,11 +6456,28 @@ GiveWildMonRandomEggMove:
 	ld h, a
 	ld l, e
 	call GetMoveIDFromIndex
-	ld [wEnemyMonMoves], a
+	ld b, a
+	ld hl, wEnemyMonMoves
+	ld de, wEnemyMonPP
+	ld c, NUM_MOVES
+.find_empty_move_slot
+	ld a, [hl]
+	and a
+	jr z, .found_empty_move_slot
+	inc hl
+	inc de
+	dec c
+	jr nz, .find_empty_move_slot
+	ld hl, wEnemyMonMoves
+	ld de, wEnemyMonPP
+
+.found_empty_move_slot
+	ld a, b
+	ld [hl], a
 	ld l, a
 	ld a, MOVE_PP
 	call GetMoveAttribute
-	ld [wEnemyMonPP], a
+	ld [de], a
 	ret
 
 CheckSleepingTreeMon:

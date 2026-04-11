@@ -1482,17 +1482,35 @@ GiveGiftMonRandomEggMove:
 	ld h, a
 	ld l, e
 	call GetMoveIDFromIndex
+	ld b, a
 	pop hl
+	push hl
+	ld c, NUM_MOVES
+.find_empty_move_slot
+	ld a, [hl]
+	and a
+	jr z, .found_empty_move_slot
+	inc hl
+	dec c
+	jr nz, .find_empty_move_slot
+	pop hl
+	push hl
+
+.found_empty_move_slot
+	pop de
+	ld a, b
 	ld [hl], a
 	push hl
 	ld l, a
 	ld a, MOVE_PP
 	call GetMoveAttribute
 	pop hl
+	push af
 	push hl
 	pop de
 	ld hl, MON_PP - MON_MOVES
 	add hl, de
+	pop af
 	ld [hl], a
 	ret
 
