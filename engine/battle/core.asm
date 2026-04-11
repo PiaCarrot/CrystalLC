@@ -2546,14 +2546,14 @@ AwardBattleLP:
 	cp RIVAL2
 	jr z, .rival
 
-	ld de, 200
+	ld de, 500
 	jr .add
 
 .wild
 	ld a, [wEnemyMonCatchRate]
 	cp 3
 	jr z, .legendary_wild
-	ld de, 50
+	ld de, 100
 	jr .add
 
 .legendary_wild
@@ -2561,11 +2561,11 @@ AwardBattleLP:
 	jr .add
 
 .rival
-	ld de, 500
+	ld de, 2000
 	jr .add
 
 .boss
-	ld de, 2000
+	ld de, 5000
 
 .add
 	ld hl, wLP + 2

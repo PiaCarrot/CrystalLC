@@ -146,9 +146,8 @@ GetMart:
 	const STANDARDMART_TOPMENU        ; 1
 	const STANDARDMART_BUY            ; 2
 	const STANDARDMART_SELL           ; 3
-	const STANDARDMART_LP             ; 4
-	const STANDARDMART_QUIT           ; 5
-	const STANDARDMART_ANYTHINGELSE   ; 6
+	const STANDARDMART_QUIT           ; 4
+	const STANDARDMART_ANYTHINGELSE   ; 5
 
 DEF STANDARDMART_EXIT EQU -1
 
@@ -168,7 +167,6 @@ StandardMart:
 	dw .TopMenu
 	dw .Buy
 	dw .Sell
-	dw .LPShop
 	dw .Quit
 	dw .AnythingElse
 
@@ -189,8 +187,6 @@ StandardMart:
 	jr z, .buy
 	cp $2
 	jr z, .sell
-	cp $3
-	jr z, .lp
 .quit
 	ld a, STANDARDMART_QUIT
 	ret
@@ -199,9 +195,6 @@ StandardMart:
 	ret
 .sell
 	ld a, STANDARDMART_SELL
-	ret
-.lp
-	ld a, STANDARDMART_LP
 	ret
 
 .Buy:
@@ -215,12 +208,6 @@ StandardMart:
 .Sell:
 	call ExitMenu
 	call SellMenu
-	ld a, STANDARDMART_ANYTHINGELSE
-	ret
-
-.LPShop:
-	call ExitMenu
-	call OpenLPMartShop
 	ld a, STANDARDMART_ANYTHINGELSE
 	ret
 
@@ -1050,10 +1037,9 @@ MenuHeader_BuySell:
 
 .MenuData
 	db STATICMENU_CURSOR ; strings
-	db 4 ; items
+	db 3 ; items
 	db "BUY@"
 	db "SELL@"
-	db "LP SHOP@"
 	db "QUIT@"
 
 MenuHeader_BuyQuit:
