@@ -2592,11 +2592,26 @@ IncubatorEffect:
 	jr z, .enable
 
 	res STATUSFLAGS2_INCUBATOR_F, [hl]
-	ret
+	ld hl, .TurnedOffText
+	jr .print
 
 .enable
 	set STATUSFLAGS2_INCUBATOR_F, [hl]
+	ld hl, .TurnedOnText
+
+.print
+	call PrintText
 	ret
+
+.TurnedOnText:
+	text "INCUBATOR was"
+	line "turned on!"
+	prompt
+
+.TurnedOffText:
+	text "INCUBATOR was"
+	line "turned off!"
+	prompt
 
 CardKeyEffect:
 	farjp _CardKey

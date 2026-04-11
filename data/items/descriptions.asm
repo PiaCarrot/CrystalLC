@@ -829,7 +829,7 @@ RainbowWingDesc:
 	next "of rainbow colors.@"
 
 IncubatorDesc:
-	db   "Toggles 3x faster"
+	db   "ON/OFF accelerated"
 	next "EGG hatching.@"
 
 QuestionMarkDesc:
