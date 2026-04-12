@@ -126,4 +126,49 @@ _GiveOddEgg:
 .Odd:
 	dname "ODD", MON_NAME_LENGTH + 1
 
+PerfectPartyMon:
+	ld a, [wPartyCount]
+	and a
+	ret z
+	dec a
+	ld hl, wPartyMon1DVs
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst AddNTimes
+	ld a, $ff
+	ld [hli], a
+	ld [hl], a
+
+	ld a, [wPartyCount]
+	dec a
+	ld hl, wPartyMon1
+	ld bc, PARTYMON_STRUCT_LENGTH
+	rst AddNTimes
+	ld b, h
+	ld c, l
+	ld hl, MON_OT_ID + 1
+	add hl, bc
+	push hl
+	ld hl, MON_MAXHP
+	add hl, bc
+	ld d, h
+	ld e, l
+	pop hl
+	push bc
+	ld b, FALSE
+	predef CalcMonStats
+	pop bc
+	ld hl, MON_MAXHP
+	add hl, bc
+	ld a, [hli]
+	ld d, a
+	ld a, [hl]
+	ld e, a
+	ld hl, MON_HP
+	add hl, bc
+	ld a, d
+	ld [hli], a
+	ld a, e
+	ld [hl], a
+	ret
+
 INCLUDE "data/events/odd_eggs.asm"

@@ -128,6 +128,7 @@ SpecialsPointers::
 	add_special LoadOpponentTrainerAndPokemonWithOTSprite
 	add_special CheckForBattleTowerRules
 	add_special GiveOddEgg
+	add_special PerfectPartyMon
 	add_special Reset ; bank 0
 	add_special MoveTutor
 	add_special OmanyteChamber

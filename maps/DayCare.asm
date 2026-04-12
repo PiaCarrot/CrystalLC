@@ -24,7 +24,7 @@ DayCareManScript_Inside:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_ODD_EGG
-	iftrue .AlreadyHaveOddEgg
+	iftrue .CheckGiftDitto
 	writetext DayCareManText_GiveOddEgg
 	promptbutton
 	closetext
@@ -39,6 +39,28 @@ DayCareManScript_Inside:
 	waitbutton
 	closetext
 	setevent EVENT_GOT_ODD_EGG
+	end
+
+.CheckGiftDitto:
+	checkevent EVENT_GOT_DAYCARE_DITTO
+	iftrue .AlreadyHaveOddEgg
+	writetext DayCareManText_GiveDitto
+	promptbutton
+	closetext
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	opentext
+	givepoke DITTO, 5
+	closetext
+	special PerfectPartyMon
+	opentext
+	writetext DayCareText_GotDitto
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	writetext DayCareText_DescribeDitto
+	waitbutton
+	closetext
+	setevent EVENT_GOT_DAYCARE_DITTO
 	end
 
 .PartyFull:
@@ -119,6 +141,29 @@ DayCareText_DescribeOddEgg:
 
 	para "EGG, so I'd kept"
 	line "it around."
+	done
+
+DayCareManText_GiveDitto:
+	text "I found this DITTO"
+	line "while I was"
+	cont "helping trainers."
+
+	para "It's friendly and"
+	line "ready for a new"
+	cont "home."
+
+	para "Here, why don't"
+	line "you raise it?"
+	done
+
+DayCareText_GotDitto:
+	text "<PLAYER> received"
+	line "DITTO!"
+	done
+
+DayCareText_DescribeDitto:
+	text "This DITTO's in"
+	line "top condition!"
 	done
 
 DayCareText_PartyFull:
